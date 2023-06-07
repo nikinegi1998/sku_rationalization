@@ -11,6 +11,9 @@ export class FileUploadComponent implements OnInit {
   @ViewChild("inputFileId1") inputFile1: ElementRef
   @ViewChild("inputFileId2") inputFile2: ElementRef
 
+  success1:boolean = false;
+  success2:boolean = false;
+
 
   ngOnInit(): void {
 
@@ -39,6 +42,7 @@ export class FileUploadComponent implements OnInit {
     this.apiService.sendFilesfirstPage(formData).subscribe({
       next: (data: any) => {
         console.log(data);
+        this.success1 = true;
       },
       error: (error: any) => {
         console.log(error);
@@ -77,6 +81,7 @@ export class FileUploadComponent implements OnInit {
     this.apiService.sendFilesfirstPage(formData).subscribe({
       next: (data: any) => {
         console.log(data);
+        this.success2 = true;
 
       }
     })
