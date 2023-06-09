@@ -1,0 +1,13 @@
+/*
+.no-blur {
+  backdrop-filter: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+::ng-deep .no-backdrop {
+  background-color: transparent !important;
+}
+
+.mat-drawer-backdrop.mat-drawer-shown {
+  background-color: transparent!important;
+} */

@@ -1,11 +1,13 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import * as XLSX from 'xlsx';
-import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../_Services/api.service';
+
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+
+import { MatModal1Component } from '../mat-modal1/mat-modal1.component';
 @Component({
   selector: 'app-file-upload',
   templateUrl: './file-upload.component.html',
-  styleUrls: ['./file-upload.component.css']
+  styleUrls: ['./file-upload.component.css'],
 })
 export class FileUploadComponent implements OnInit {
   @ViewChild("inputFileId1") inputFile1: ElementRef
@@ -14,12 +16,21 @@ export class FileUploadComponent implements OnInit {
   success1:boolean = false;
   success2:boolean = false;
 
+  constructor(private apiService: ApiService, private dialog: MatDialog) {
+   }
 
   ngOnInit(): void {
 
   }
 
-  constructor(private apiService: ApiService) { }
+  openDrawer(): void {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.width = '40vw';
+    dialogConfig.panelClass = 'no-backdrop-dialog';
+
+    this.dialog.open(MatModal1Component, dialogConfig);
+  }
+
 
 
 
@@ -29,8 +40,6 @@ export class FileUploadComponent implements OnInit {
   onClickIcon2() {
     this.inputFile2?.nativeElement.click();
   }
-
-
 
   handleEvent1(event: any) {
 
@@ -49,26 +58,6 @@ export class FileUploadComponent implements OnInit {
 
       }
     })
-
-    // const file = event.target.files.item(0);
-
-    // if (file && file.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet') {
-    //   const reader = new FileReader();
-    //   reader.onload = (e) => {
-    //     const data = new Uint8Array(e.target!.result as ArrayBuffer);
-    //     const workbook = XLSX.read(data, { type: 'array' });
-    //     const sheetName = workbook.SheetNames[0];
-    //     const worksheet = workbook.Sheets[sheetName];
-    //     const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
-
-    //     // Process the JSON data from the XLSX file
-    //     console.log('XLSX data:', jsonData);
-    //   };
-    //   reader.readAsArrayBuffer(file);
-    // } else {
-    //   console.log('Please select an XLSX file.');
-    // }
-
   }
 
   handleEvent2(event: any) {
@@ -82,28 +71,11 @@ export class FileUploadComponent implements OnInit {
       next: (data: any) => {
         console.log(data);
         this.success2 = true;
-
       }
     })
-
-    // const file = event.target.files.item(0);
-
-    // if (file && file.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet') {
-    //   const reader = new FileReader();
-    //   reader.onload = (e) => {
-    //     const data = new Uint8Array(e.target!.result as ArrayBuffer);
-    //     const workbook = XLSX.read(data, { type: 'array' });
-    //     const sheetName = workbook.SheetNames[0];
-    //     const worksheet = workbook.Sheets[sheetName];
-    //     const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
-
-    //     // Process the JSON data from the XLSX file
-    //     console.log('XLSX data:', jsonData);
-    //   };
-    //   reader.readAsArrayBuffer(file);
-    // } else {
-    //   console.log('Please select an XLSX file.');
-    // }
-
   }
+
+
+
+
 }
