@@ -14,7 +14,7 @@ export class SideNavComponent implements  OnInit {
   currentRoute: string;
 
   dashboard: boolean = false;
-  columnSection: boolean = false;
+  standardizeChart: boolean = false;
 
   constructor(private router: Router){
     this.currentRoute = "";
@@ -39,10 +39,10 @@ export class SideNavComponent implements  OnInit {
         console.log(this.currentRoute);
         if (this.currentRoute === "/dashboard" || this.currentRoute === "/" || this.currentRoute === "/claimAdjudication") {
           this.dashboard = true;
-          this.columnSection = false;
+          this.standardizeChart = false;
         }
-        if (this.currentRoute === "/columnSection") {
-          this.columnSection = true;
+        if (this.currentRoute === "/standardizeChart") {
+          this.standardizeChart = true;
           this.dashboard = false;
         }
 
@@ -56,7 +56,7 @@ export class SideNavComponent implements  OnInit {
       this.router.navigateByUrl("/");
     }
     if(event.selectedIndex == 1){
-      this.router.navigateByUrl("/columnSection");
+      this.router.navigateByUrl("/standardizeChart");
     }
   }
 

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ColumnSectionComponent } from './column-section/column-section.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
+import { StandardizeChartComponent } from './standardize-chart/standardize-chart.component';
 
 const routes: Routes = [
   {
@@ -9,8 +9,8 @@ const routes: Routes = [
     component: FileUploadComponent,
   },
   {
-    path: "columnSection",
-    component:ColumnSectionComponent
+    path: "standardizeChart",
+    component:StandardizeChartComponent
   }
 ];
 

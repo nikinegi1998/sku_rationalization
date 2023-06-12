@@ -1,14 +1,17 @@
 
-<mat-drawer-container  >
-  <mat-drawer mode="side" opened   style="width: 5vw;min-height: 100%;"><app-side-nav></app-side-nav></mat-drawer>
-  <mat-drawer-content class=" "  >
-    <div  class="scroller" #scroller1 style="min-height: 100vh;">
-
-      <router-outlet ></router-outlet>
+<mat-drawer-container class="mb-5" >
+  <mat-drawer mode="side" opened class=""  style="width: 5vw;background-color: #3F7EFF;"><app-side-nav></app-side-nav></mat-drawer>
+  <mat-drawer-content class="mb-5 "  >
+    <app-header></app-header>
+    <div  class="scroller" #scroller1 >
+      <router-outlet  ></router-outlet>
     </div>
   </mat-drawer-content>
 </mat-drawer-container>
 
+<div class="sticky-bottom ">
+  <app-footer></app-footer>
+</div>
 
 <!-- <div class="d-flex flex-row" style = "background-color:#F6F7FB;">
   <app-side-nav style="min-width:  2vw;"></app-side-nav>

@@ -1,5 +1,16 @@
-<h2 class="ms-3 mt-3" style="font-weight: 595;">Upload & Check Sku</h2>
+<h3 class="ms-3 mt-3" style="font-weight: 595;">Upload & Check Sku</h3>
 
+<!-- <mat-form-field>
+  <mat-label>Message</mat-label>
+  <input matInput value="Disco party!" #message>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Action</mat-label>
+  <input matInput value="Dance" #action>
+</mat-form-field> -->
+
+<button mat-stroked-button style="display: none;" #snackBar1 >Show snack-bar</button>
 
 
 <div class="m-3 d-flex flex-row justify-content-between">
@@ -21,11 +32,11 @@
       <img src="../../assets/File_42px.svg" height="50" width="50" class="" alt="">
 
     </div>
-    <input type="file" #inputFileId2 (change)="handleEvent1($event)" style="width: auto;opacity: 0;display: none; ">
+    <input type="file" #inputFileId2 (change)="handleEvent2($event)" style="width: auto;opacity: 0;display: none; ">
     <h5 class="m-auto" style="color: #969EA3;">Upload Sku file  To Standardize</h5>
   </div>
 </div>
 
-<div class="d-flex justify-content-end m-3 mt-5 " > <button (click)="openDrawer()" mat-raised-button color="primary" [disabled]="false"  class="text-end">Continue</button></div>
+<div class="d-flex justify-content-end m-3 mt-5 fixed-bottom mb-auto " > <button (click)="openDrawer()" mat-raised-button color="primary" [disabled]="(success1 && success2)?false:true" class="mb-5" >Continue</button></div>
 <!-- <div class="d-flex justify-content-end m-3 mt-5 " *ngIf="success1 && success2"> <button (click)="openDrawer()" mat-raised-button color="primary"  class="text-end">Continue</button></div> -->
 

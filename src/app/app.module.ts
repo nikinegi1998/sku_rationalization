@@ -14,7 +14,6 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDialogModule} from '@angular/material/dialog';
 
-import { ColumnSectionComponent } from './column-section/column-section.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { MatModal1Component } from './mat-modal1/mat-modal1.component';
 import { MatDialog2Component } from './mat-dialog2/mat-dialog2.component';
@@ -22,14 +21,24 @@ import { MatPaginatorModule} from '@angular/material/paginator';
 import { MatTableModule} from '@angular/material/table';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatBadgeModule} from '@angular/material/badge';
+
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { StandardizeChartComponent } from './standardize-chart/standardize-chart.component';
 @NgModule({
   declarations: [
     AppComponent,
     FileUploadComponent,
-    ColumnSectionComponent,
     SideNavComponent,
     MatModal1Component,
-    MatDialog2Component
+    MatDialog2Component,
+    FooterComponent,
+    HeaderComponent,
+    StandardizeChartComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +54,11 @@ import {MatChipsModule} from '@angular/material/chips';
     MatPaginatorModule,
     MatTableModule,
     MatRadioModule,
-    MatChipsModule
+    MatChipsModule,
+    MatSnackBarModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

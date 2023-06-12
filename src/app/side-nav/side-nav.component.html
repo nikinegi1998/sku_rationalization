@@ -1,8 +1,8 @@
-<div class="card " style="min-height: 100%;">
-  <mat-stepper class="" (selectionChange) = "testClick($event)" orientation="vertical" [linear]="false" #stepper
+<div class="card rounded-0" style="min-height: 100%;background-color: #3F7EFF;">
+  <mat-stepper class="bg-transparent mt-5"  (selectionChange) = "testClick($event)" orientation="vertical" [linear]="false" #stepper
   style="font-family: 'Poppins', sans-serif!important;">
   <!-- Define the edit icon, by default is 'create' -->
-  <ng-template matStepperIcon="edit">
+  <ng-template matStepperIcon="edit" >
     <mat-icon>number</mat-icon>
   </ng-template>
 
@@ -13,7 +13,7 @@
   <mat-step [completed]="dashboard" routerLink="/">
     <!-- <button mat-button matStepperNext>Next</button> -->
   </mat-step>
-  <mat-step [completed]="columnSection"  routerLink="/columnSection">
+  <mat-step [completed]="standardizeChart"  routerLink="/standardizeChart">
     <ng-template matStepLabel>
     </ng-template>
     <!-- <button mat-button matStepperNext>Next</button>
