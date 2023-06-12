@@ -1,83 +1,42 @@
-<h2 class="ms-3 mt-3">Upload & Check Sku</h2>
+<h3 class="ms-3 mt-3" style="font-weight: 595;">Upload & Check Sku</h3>
 
-<mat-stepper class="" *ngIf="false" orientation="vertical" [linear]="false" #stepper
-        style="font-family: 'Poppins', sans-serif!important;">
-        <!-- Define the edit icon, by default is 'create' -->
-        <ng-template matStepperIcon="edit">
-          <mat-icon>number</mat-icon>
-        </ng-template>
+<!-- <mat-form-field>
+  <mat-label>Message</mat-label>
+  <input matInput value="Disco party!" #message>
+</mat-form-field>
 
-        <!-- Define the number of the step -->
-        <ng-template matStepperIcon="number" let-index="index">
-          {{index+1}}
-        </ng-template>
-        <mat-step [completed]="true">
-          <!-- <button mat-button matStepperNext>Next</button> -->
-        </mat-step>
-        <mat-step [completed]="true">
-          <!-- <button mat-button matStepperNext>Next</button>
-          <button mat-button matStepperPrevious>Back</button> -->
-        </mat-step>
-        <mat-step [completed]="true">
-          <!-- <button mat-button matStepperNext>Next</button>
-          <button mat-button matStepperPrevious>Back</button> -->
-        </mat-step>
-        <mat-step [completed]="false">
-          <!-- <button mat-button matStepperPrevious>Back</button> -->
-        </mat-step>
-      </mat-stepper>
+<mat-form-field>
+  <mat-label>Action</mat-label>
+  <input matInput value="Dance" #action>
+</mat-form-field> -->
+
+<button mat-stroked-button style="display: none;" #snackBar1 >Show snack-bar</button>
+
 
 <div class="m-3 d-flex flex-row justify-content-between">
 
   <div class="card p-5"  style="width: 45vw;cursor: pointer;" (click)="onClickIcon1()">
 
-    <i class="bi bi-file-earmark-arrow-up m-auto p-4">
-      <svg xmlns="http://www.w3.org/2000/svg" width="76" height="76" fill="currentColor" class="bi bi-file-earmark-arrow-up" viewBox="0 0 16 16">
-        <path d="M8.5 11.5a.5.5 0 0 1-1 0V7.707L6.354 8.854a.5.5 0 1 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 7.707V11.5z"/>
-        <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
-      </svg>
-    </i>
+    <div class="card mx-auto p-4 rounded-circle mb-4" style="background-color: #EEEFF1;border-color: #E2E5F2;">
+      <img src="../../assets/File_42px.svg" height="50" width="50" class="" alt="">
+
+    </div>
+
     <input type="file" #inputFileId1  (change)="handleEvent1($event)" style="width: auto;opacity: 0;display: none; ">
-    <h3 class="m-auto">Upload Sku file  To Standardize</h3>
+    <h5 class="m-auto" style="color: #969EA3;">Upload Sku file  To Standardize</h5>
+
   </div>
   <div class="card p-5"  style="width: 45vw;cursor: pointer;" (click)="onClickIcon2()">
 
-    <i class="bi bi-file-earmark-arrow-up m-auto p-4">
-      <svg xmlns="http://www.w3.org/2000/svg" width="76" height="76" fill="currentColor" class="bi bi-file-earmark-arrow-up" viewBox="0 0 16 16">
-        <path d="M8.5 11.5a.5.5 0 0 1-1 0V7.707L6.354 8.854a.5.5 0 1 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 7.707V11.5z"/>
-        <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
-      </svg>
-    </i>
-    <input type="file" #inputFileId2 (change)="handleEvent1($event)" style="width: auto;opacity: 0;display: none; ">
-    <h3 class="m-auto">Upload Sku file  To Standardize</h3>
-  </div>
-</div>
+    <div class="card mx-auto p-4 rounded-circle mb-4" style="background-color: #EEEFF1;border-color: #E2E5F2;">
+      <img src="../../assets/File_42px.svg" height="50" width="50" class="" alt="">
 
-<div class="d-flex justify-content-end m-3 mt-5 "> <button data-bs-toggle="modal" data-bs-target="#exampleModal" mat-raised-button color="primary" [disabled]="!success1 && !success2" class="text-end">Continue</button></div>
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body text-center" *ngIf="success1 && success2">
-        <i class="bi bi-cloud-upload-fill m-2 mb-5">
-          <svg xmlns="http://www.w3.org/2000/svg" width="66" height="66" fill="currentColor" class="bi bi-cloud-upload-fill" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M8 0a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 4.095 0 5.555 0 7.318 0 9.366 1.708 11 3.781 11H7.5V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11h4.188C14.502 11 16 9.57 16 7.773c0-1.636-1.242-2.969-2.834-3.194C12.923 1.999 10.69 0 8 0zm-.5 14.5V11h1v3.5a.5.5 0 0 1-1 0z"/>
-          </svg>
-        </i>
-        <h4 class="mt-4">
-          Sku File Has Been Uploaded Successfully
-        </h4>
-        <p>Click continue to select the column to make Sku list standardize</p>
-      </div>
-      <div class="m-2 mb-5 mx-auto">
-        <button data-bs-toggle="modal" data-bs-target="#exampleModal" mat-raised-button color="primary" class="text-end" routerLink="/columnSection">Continue</button>
-      </div>
     </div>
+    <input type="file" #inputFileId2 (change)="handleEvent2($event)" style="width: auto;opacity: 0;display: none; ">
+    <h5 class="m-auto" style="color: #969EA3;">Upload Sku file  To Standardize</h5>
   </div>
 </div>
+
+<div class="d-flex justify-content-end m-3 mt-5 fixed-bottom mb-auto " > <button (click)="openDrawer()" mat-raised-button color="primary" [disabled]="(success1 && success2)?false:true" class="mb-5" >Continue</button></div>
+<!-- <div class="d-flex justify-content-end m-3 mt-5 " *ngIf="success1 && success2"> <button (click)="openDrawer()" mat-raised-button color="primary"  class="text-end">Continue</button></div> -->
+

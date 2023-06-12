@@ -1,0 +1,3 @@
+.no-backdrop-dialog .cdk-overlay-backdrop {
+  background-color: transparent !important;
+}
