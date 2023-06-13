@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { StandardizeChartComponent } from './standardize-chart/standardize-chart.component';
+import { DuplicityItemB1Component } from './duplicity-item-b1/duplicity-item-b1.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: "standardizeChart",
     component:StandardizeChartComponent
+  },
+  {
+    path: "duplicitItemsB1",
+    component:DuplicityItemB1Component
   }
 ];
 

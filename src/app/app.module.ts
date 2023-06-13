@@ -29,6 +29,7 @@ import {MatBadgeModule} from '@angular/material/badge';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { StandardizeChartComponent } from './standardize-chart/standardize-chart.component';
+import { DuplicityItemB1Component } from './duplicity-item-b1/duplicity-item-b1.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import { StandardizeChartComponent } from './standardize-chart/standardize-chart
     MatDialog2Component,
     FooterComponent,
     HeaderComponent,
-    StandardizeChartComponent
+    StandardizeChartComponent,
+    DuplicityItemB1Component
   ],
   imports: [
     BrowserModule,

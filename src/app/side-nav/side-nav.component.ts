@@ -15,6 +15,7 @@ export class SideNavComponent implements  OnInit {
 
   dashboard: boolean = false;
   standardizeChart: boolean = false;
+  duplicitItemsB1:boolean = false;
 
   constructor(private router: Router){
     this.currentRoute = "";
@@ -40,9 +41,18 @@ export class SideNavComponent implements  OnInit {
         if (this.currentRoute === "/dashboard" || this.currentRoute === "/" || this.currentRoute === "/claimAdjudication") {
           this.dashboard = true;
           this.standardizeChart = false;
+          this.duplicitItemsB1 = false;
+
         }
         if (this.currentRoute === "/standardizeChart") {
           this.standardizeChart = true;
+          this.dashboard = false;
+          this.duplicitItemsB1 = false;
+        }
+
+        if (this.currentRoute === "/duplicitItemsB1") {
+          this.duplicitItemsB1 = true;
+          this.standardizeChart = false;
           this.dashboard = false;
         }
 
@@ -57,6 +67,9 @@ export class SideNavComponent implements  OnInit {
     }
     if(event.selectedIndex == 1){
       this.router.navigateByUrl("/standardizeChart");
+    }
+    if(event.selectedIndex == 2){
+      this.router.navigateByUrl("/duplicitItemsB1");
     }
   }
 
