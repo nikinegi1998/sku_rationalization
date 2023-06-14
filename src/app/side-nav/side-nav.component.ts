@@ -42,20 +42,17 @@ export class SideNavComponent implements  OnInit {
           this.dashboard = true;
           this.standardizeChart = false;
           this.duplicitItemsB1 = false;
-
         }
         if (this.currentRoute === "/standardizeChart") {
           this.standardizeChart = true;
           this.dashboard = false;
           this.duplicitItemsB1 = false;
         }
-
         if (this.currentRoute === "/duplicitItemsB1") {
           this.duplicitItemsB1 = true;
           this.standardizeChart = false;
           this.dashboard = false;
         }
-
       }
     });
   }

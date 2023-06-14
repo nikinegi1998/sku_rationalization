@@ -25,7 +25,13 @@ export class FileUploadComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    let body = {"Selected Columns": {"list1":["SKU Description"], "list2":["SUBCLASS_NAME"]}}
+    this.apiService.sendColumnNames(body).subscribe({
+      next: (res:any)=> {
+        console.log("Yes",res);
 
+      }
+    })
   }
 
   openSnackBar(message: string, action: string) {

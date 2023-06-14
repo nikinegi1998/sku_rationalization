@@ -9,14 +9,17 @@
 
   <small class="ms-3 fw-normal" style="color:#969EA3;">Select The Column To Make Sku List Standardize</small>
 
-  <mat-tab-group animationDuration="0ms" mat-stretch-tabs="false" mat-align-tabs="start" disableRipple class="m-3">
+  <mat-tab-group animationDuration="0ms" mat-stretch-tabs="false" mat-align-tabs="start" disableRipple class="m-3" [(selectedIndex)]="indexNumber" >
     <mat-tab label="List 1">
-      <div class="mat-elevation-z8" style="font-size: 0.9em;">
-        <table mat-table [dataSource]="dataSource1" >
 
-          <mat-chip-listbox >
-            <ng-container matColumnDef="Class Description">
-              <th mat-header-cell *matHeaderCellDef class="p-1">
+
+
+      <div class="" style="font-size: 1vh;">
+        <table mat-table [dataSource]="dataSource1"  >
+
+          <!-- <mat-chip-listbox >
+            <ng-container matColumnDef="Class Description" >
+              <th mat-header-cell *matHeaderCellDef class="p-1" (selectionChange) = "clickTrigger($event)">
 
                 <mat-chip-option color="accent" class="ms-0 rounded-4   custom-chip-option" >Class Description </mat-chip-option>
 
@@ -57,6 +60,48 @@
               </th>
               <td mat-cell *matCellDef="let element"> {{element["SKU Id"]}} </td>
             </ng-container>
+          </mat-chip-listbox> -->
+
+          <mat-chip-listbox>
+            <!-- Class Description -->
+            <ng-container matColumnDef="Class Description" >
+              <th mat-header-cell *matHeaderCellDef class="p-1">
+                <mat-chip-option color="accent" class="ms-0 rounded-4 custom-chip-option" (click)="onChipOptionClick1('Class Description')">Class Description</mat-chip-option>
+              </th>
+              <td mat-cell *matCellDef="let element">{{element["Class Description"]}}</td>
+            </ng-container>
+
+            <!-- Sub Department Description -->
+            <ng-container matColumnDef="Sub Department Description" class="p-1">
+              <th mat-header-cell *matHeaderCellDef>
+                <mat-chip-option color="accent" class="ms-0 rounded-4 custom-chip-option" (click)="onChipOptionClick1('Sub Department Description')">Sub Department Description</mat-chip-option>
+              </th>
+              <td mat-cell *matCellDef="let element">{{element["Sub Department Description"]}}</td>
+            </ng-container>
+
+            <!-- Sub Class Description -->
+            <ng-container matColumnDef="Sub Class Description">
+              <th mat-header-cell *matHeaderCellDef>
+                <mat-chip-option color="accent" class="ms-0 rounded-4 custom-chip-option" (click)="onChipOptionClick1('Sub Class Description')">Sub Class Description</mat-chip-option>
+              </th>
+              <td mat-cell *matCellDef="let element">{{element["Sub Class Description"]}}</td>
+            </ng-container>
+
+            <!-- SKU Description -->
+            <ng-container matColumnDef="SKU Description">
+              <th mat-header-cell *matHeaderCellDef>
+                <mat-chip-option color="accent" class="ms-0 rounded-4 custom-chip-option" (click)="onChipOptionClick1('SKU Description')">SKU Description</mat-chip-option>
+              </th>
+              <td mat-cell *matCellDef="let element">{{element["SKU Description"]}}</td>
+            </ng-container>
+
+            <!-- SKU Id -->
+            <ng-container matColumnDef="SKU Id">
+              <th mat-header-cell *matHeaderCellDef>
+                <mat-chip-option color="accent" class="ms-0 rounded-4 custom-chip-option" (click)="onChipOptionClick1('SKU Id')">SKU Id</mat-chip-option>
+              </th>
+              <td mat-cell *matCellDef="let element">{{element["SKU Id"]}}</td>
+            </ng-container>
           </mat-chip-listbox>
 
           <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
@@ -66,12 +111,17 @@
         <mat-paginator #paginator1 [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons
           [length]="dataSource1?.data.length" [pageSize]="5" [pageIndex]="0">
         </mat-paginator>
+
+
+      </div>
+      <div class="d-flex justify-content-end mt-2">
+        <button mat-raised-button color="primary" class="text-end me-4" (click)="changeMatTabIndexNo()">Continue</button>
       </div>
     </mat-tab>
     <mat-tab label="List 2">
-      <div class="mat-elevation-z8">
+      <div class="">
         <table mat-table [dataSource]="dataSource2">
-          <mat-chip-listbox >
+          <!-- <mat-chip-listbox >
 
             <ng-container matColumnDef="DIVISION_NAME">
               <th mat-header-cell *matHeaderCellDef>
@@ -112,6 +162,72 @@
               </th>
               <td mat-cell *matCellDef="let element"> {{element["SKU_ID"]}} </td>
             </ng-container>
+          </mat-chip-listbox> -->
+
+          <mat-chip-listbox>
+            <!-- Division Name -->
+            <ng-container matColumnDef="DIVISION_NAME">
+              <th mat-header-cell *matHeaderCellDef>
+                <mat-chip-option color="accent" class="ms-0 rounded-4 custom-chip-option" (click)="onChipOptionClick2('DIVISION_NAME')">Division Name</mat-chip-option>
+              </th>
+              <td mat-cell *matCellDef="let element">{{element["DIVISION_NAME"]}}</td>
+            </ng-container>
+
+            <!-- Department Name -->
+            <ng-container matColumnDef="DEPT_NAME">
+              <th mat-header-cell *matHeaderCellDef>
+                <mat-chip-option color="accent" class="ms-0 rounded-4 custom-chip-option" (click)="onChipOptionClick2('DEPT_NAME')">Department Name</mat-chip-option>
+              </th>
+              <td mat-cell *matCellDef="let element">{{element["DEPT_NAME"]}}</td>
+            </ng-container>
+
+            <!-- Category Name -->
+            <!-- <ng-container matColumnDef="CATEGORY_NAME">
+              <th mat-header-cell *matHeaderCellDef>
+                <mat-chip-option color="accent" class="ms-0 rounded-4 custom-chip-option" (click)="onChipOptionClick2('CATEGORY_NAME')">Category Name</mat-chip-option>
+              </th>
+              <td mat-cell *matCellDef="let element">{{element["CATEGORY_NAME"]}}</td>
+            </ng-container> -->
+
+             <!-- class Name -->
+             <ng-container matColumnDef="CLASS_NAME">
+              <th mat-header-cell *matHeaderCellDef>
+                <mat-chip-option color="accent" class="ms-0 rounded-4 custom-chip-option" (click)="onChipOptionClick2('CLASS_NAME')">Class Name</mat-chip-option>
+              </th>
+              <td mat-cell *matCellDef="let element">{{element["CLASS_NAME"]}}</td>
+            </ng-container>
+
+            <!-- subclass Name -->
+            <ng-container matColumnDef="SUBCLASS_NAME">
+              <th mat-header-cell *matHeaderCellDef>
+                <mat-chip-option color="accent" class="ms-0 rounded-4 custom-chip-option" (click)="onChipOptionClick2('SUBCLASS_NAME')">Subclass Name</mat-chip-option>
+              </th>
+              <td mat-cell *matCellDef="let element">{{element["SUBCLASS_NAME"]}}</td>
+            </ng-container>
+
+            <!-- SKU Type -->
+            <ng-container matColumnDef="SKU Type">
+              <th mat-header-cell *matHeaderCellDef>
+                <mat-chip-option color="accent" class="ms-0 rounded-4 custom-chip-option" (click)="onChipOptionClick2('SKU Type')">SKU Type</mat-chip-option>
+              </th>
+              <td mat-cell *matCellDef="let element">{{element["SKU Type"]}}</td>
+            </ng-container>
+
+            <!-- SKU Name -->
+            <ng-container matColumnDef="SKU_NAME">
+              <th mat-header-cell *matHeaderCellDef>
+                <mat-chip-option color="accent" class="ms-0 rounded-4 custom-chip-option" (click)="onChipOptionClick2('SKU_NAME')">SKU Name</mat-chip-option>
+              </th>
+              <td mat-cell *matCellDef="let element">{{element["SKU_NAME"]}}</td>
+            </ng-container>
+
+            <!-- SKU ID -->
+            <ng-container matColumnDef="SKU_ID">
+              <th mat-header-cell *matHeaderCellDef>
+                <mat-chip-option color="accent" class="ms-0 rounded-4 custom-chip-option" (click)="onChipOptionClick2('SKU_ID')">SKU ID</mat-chip-option>
+              </th>
+              <td mat-cell *matCellDef="let element">{{element["SKU_ID"]}}</td>
+            </ng-container>
           </mat-chip-listbox>
 
           <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
@@ -122,11 +238,11 @@
           [length]="dataSource2?.data.length" [pageSize]="5" [pageIndex]="0">
         </mat-paginator>
       </div>
+      <div class="d-flex justify-content-end mt-2">
+
+        <button mat-raised-button color="primary" class="text-end me-4" mat-dialog-close (click)="sendColumn()">Continue</button>
+      </div>
     </mat-tab>
   </mat-tab-group>
 
-  <div class="d-flex justify-content-end">
-
-    <button mat-raised-button color="primary" class="text-end me-4">Continue</button>
-  </div>
 </div>
