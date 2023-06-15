@@ -25,11 +25,21 @@ export class FileUploadComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    let body = {"Selected Columns": {"list1":["SKU Description"], "list2":["SUBCLASS_NAME"]}}
+    this.apiService.sendColumnNames(body).subscribe({
+      next: (res:any)=> {
+        console.log("Yes",res);
 
+      }
+    })
   }
 
   openSnackBar(message: string, action: string) {
-    this._snackBar.open(message, action);
+    this._snackBar.open(message, action, {
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
+      panelClass: ['custom-snackbar'],
+    });
   }
 
   openDrawer(): void {
@@ -64,7 +74,7 @@ export class FileUploadComponent implements OnInit {
       next: (data: any) => {
         console.log(data);
         this.success1 = true;
-        this.openSnackBar(fileField.files[0].name, 'x')
+        this.openSnackBar(`${fileField.files[0].name} Uploaded Successfully`, 'x')
       },
       error: (error: any) => {
         console.log(error);
@@ -86,7 +96,7 @@ export class FileUploadComponent implements OnInit {
       next: (data: any) => {
         console.log(data);
         this.success2 = true;
-        this.openSnackBar(fileField.files[0].name, 'x')
+        this.openSnackBar(`${fileField.files[0].name} Uploaded Successfully`, 'x')
 
       }
     })

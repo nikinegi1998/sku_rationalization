@@ -1,5 +1,5 @@
-<div class="card rounded-0" style="min-height: 100%;background-color: #3F7EFF;">
-  <mat-stepper class="bg-transparent mt-5"  (selectionChange) = "testClick($event)" orientation="vertical" [linear]="false" #stepper
+<div class="card  rounded-0" style="min-height: 100%;background-color: #3F7EFF;">
+  <mat-stepper class="bg-transparent mt-5 "  (selectionChange) = "testClick($event)" orientation="vertical" [linear]="false" #stepper
   style="font-family: 'Poppins', sans-serif!important;">
   <!-- Define the edit icon, by default is 'create' -->
   <ng-template matStepperIcon="edit" >
@@ -19,11 +19,21 @@
     <!-- <button mat-button matStepperNext>Next</button>
     <button mat-button matStepperPrevious>Back</button> -->
   </mat-step>
-  <mat-step [completed]="false">
+  <mat-step [completed]="duplicitItemsB1" routerLink="/duplicitItemsB1">
     <!-- <button mat-button matStepperNext>Next</button>
     <button mat-button matStepperPrevious>Back</button> -->
   </mat-step>
-  <mat-step [completed]="false">
+  <mat-step [completed]="duplicitItemsB2" routerLink="/duplicitItemsB2">
+    <!-- <button mat-button matStepperPrevious>Back</button> -->
+  </mat-step>
+
+  <mat-step [completed]="duplicitAcross" routerLink="/duplicitAcross">
+    <!-- <button mat-button matStepperPrevious>Back</button> -->
+  </mat-step>
+  <mat-step [completed]="itemClassification" routerLink="/itemClassification">
+    <!-- <button mat-button matStepperPrevious>Back</button> -->
+  </mat-step>
+  <mat-step [completed]="finalList" routerLink="/finalList">
     <!-- <button mat-button matStepperPrevious>Back</button> -->
   </mat-step>
   </mat-stepper>

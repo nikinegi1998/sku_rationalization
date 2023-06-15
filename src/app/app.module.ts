@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 import {MatStepperModule} from '@angular/material/stepper';
 import { MatIconModule } from '@angular/material/icon';
@@ -25,10 +26,19 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatSelectModule} from '@angular/material/select';
 
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { StandardizeChartComponent } from './standardize-chart/standardize-chart.component';
+import { DuplicityItemB1Component } from './duplicity-item-b1/duplicity-item-b1.component';
+import { DuplicityItemsB2Component } from './duplicity-items-b2/duplicity-items-b2.component';
+
+import { NgxPaginationModule } from 'ngx-pagination';
+import { DuplicityAcrossComponent } from './duplicity-across/duplicity-across.component';
+import { MatDialog3Component } from './mat-dialog3/mat-dialog3.component';
+import { ItemClassificationComponent } from './item-classification/item-classification.component';
+import { FinalListComponent } from './final-list/final-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,13 +48,20 @@ import { StandardizeChartComponent } from './standardize-chart/standardize-chart
     MatDialog2Component,
     FooterComponent,
     HeaderComponent,
-    StandardizeChartComponent
+    StandardizeChartComponent,
+    DuplicityItemB1Component,
+    DuplicityItemsB2Component,
+    DuplicityAcrossComponent,
+    MatDialog3Component,
+    ItemClassificationComponent,
+    FinalListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatStepperModule,
     MatIconModule,
     MatButtonModule,
@@ -56,9 +73,11 @@ import { StandardizeChartComponent } from './standardize-chart/standardize-chart
     MatRadioModule,
     MatChipsModule,
     MatSnackBarModule,
+    MatSelectModule,
     MatFormFieldModule,
     MatInputModule,
-    MatBadgeModule
+    MatBadgeModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
