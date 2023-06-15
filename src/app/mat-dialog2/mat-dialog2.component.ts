@@ -46,7 +46,7 @@ export class MatDialog2Component implements OnInit {
       next: (res: any) => {
         this.list1 = JSON.parse(res["List 1"]);
         this.list2 = JSON.parse(res["List 2"]);
-        console.log(this.list1);
+        console.log(this.list1, this.list2);
         this.dataSource1 = new MatTableDataSource<any>(this.list1);
         this.dataSource1.paginator = this.paginator1;
         this.dataSource2 = new MatTableDataSource<any>(this.list2);
@@ -81,7 +81,9 @@ export class MatDialog2Component implements OnInit {
       next: (res:any) => {
         console.log("RESS",res);
         this.apiService.sendColumnRes(res)
-        localStorage.setItem("colummRes", JSON.stringify(res))
+        localStorage.setItem("colummRes", JSON.stringify(res.Final_Standardization_Chart))
+        localStorage.setItem("colummAllDataRes", JSON.stringify(res))
+
         this.router.navigateByUrl("/standardizeChart")
       }
     })

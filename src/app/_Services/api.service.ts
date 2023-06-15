@@ -7,13 +7,31 @@ import { Observable, Subject } from 'rxjs';
 })
 export class ApiService {
 
-  constructor(private http: HttpClient) { }
+  hostname:any = window.location.hostname;
+  PORT:number = 3000;
+  PROTOCOL:string = window.location.protocol
 
-  sendFilesApi = "https://demo.jktech.in:3000/process-file/uploadfile?folder_name=SKU_Rationalization Files"
 
-  retailSkuTablePage2 = "http://52.172.146.146:3000/process-json/Retail-SKU"
+  sendFilesApi:any;
+
+  retailSkuTablePage2:any;
 
   private columnRes$ = new Subject<any>();
+
+  constructor(private http: HttpClient) {
+    console.log(this.hostname,this.PROTOCOL,this.sendFilesApi);
+
+    if(this.hostname == "localhost"){
+      this.sendFilesApi = "https://demo.jktech.in:3000/process-file/uploadfile?folder_name=SKU_Rationalization Files";
+      this.retailSkuTablePage2 = "http://52.172.146.146:3000/process-json/Retail-SKU";
+    }
+    else{
+      this.sendFilesApi = `https://${this.hostname}:${this.PORT}/process-file/uploadfile?folder_name=SKU_Rationalization Files`;
+      this.retailSkuTablePage2 = `https://${this.hostname}:${this.PORT}/process-json/Retail-SKU`;
+    }
+  }
+
+
 
 
   sendFilesfirstPage(body:any){

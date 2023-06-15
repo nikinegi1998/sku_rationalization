@@ -9,24 +9,48 @@ import { ApiService } from '../_Services/api.service';
 })
 export class StandardizeChartComponent implements OnInit {
 
-  data:any;
+  data: any;
 
-subscription:Subscription
+  subscription: Subscription
 
-constructor(private apiService:ApiService){
-  this.data = JSON.parse(localStorage.getItem("colummRes"));
-  this.subscription = this.apiService.getColumnRes().subscribe({
-    next: (res:any) => {
-      console.log("OBSERVABLE",res);
-      // this.data = res;
-    }
-  })
-}
+  constructor(private apiService: ApiService) {
+  }
 
-ngOnInit(): void {
-    console.log(this.data,
-      this.data.subcat_UOM_dict_DT.DT["Fluid Once"]);
+  ngOnInit(): void {
+    this.getChartData()
 
-}
+  }
+
+  getChartData() {
+    this.data = JSON.parse(localStorage.getItem("colummRes"));
+    this.subscription = this.apiService.getColumnRes().subscribe({
+      next: (res: any) => {
+        console.log("OBSERVABLE", res);
+        // this.data = res;
+      }
+    })
+  }
+
+  testClick(event: any) {
+    console.log("Event", event.target.getAttribute('value'), event.target);
+    let id = event.target.id
+    id = id.split("-")
+    console.log(id);
+
+    let keyName = id[1]
+
+    let value = event.target.getAttribute('value')
+
+    this.data[keyName].Both[value] = event.target.textContent
+
+
+    console.log(this.data[keyName].Both[value]);
+
+
+    document.getElementById(event.target.id).style.color = "green";
+
+    localStorage.setItem("colummRes", JSON.stringify(this.data))
+
+  }
 
 }

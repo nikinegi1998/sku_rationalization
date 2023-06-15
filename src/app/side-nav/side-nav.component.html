@@ -23,7 +23,17 @@
     <!-- <button mat-button matStepperNext>Next</button>
     <button mat-button matStepperPrevious>Back</button> -->
   </mat-step>
-  <mat-step [completed]="false">
+  <mat-step [completed]="duplicitItemsB2" routerLink="/duplicitItemsB2">
+    <!-- <button mat-button matStepperPrevious>Back</button> -->
+  </mat-step>
+
+  <mat-step [completed]="duplicitAcross" routerLink="/duplicitAcross">
+    <!-- <button mat-button matStepperPrevious>Back</button> -->
+  </mat-step>
+  <mat-step [completed]="itemClassification" routerLink="/itemClassification">
+    <!-- <button mat-button matStepperPrevious>Back</button> -->
+  </mat-step>
+  <mat-step [completed]="finalList" routerLink="/finalList">
     <!-- <button mat-button matStepperPrevious>Back</button> -->
   </mat-step>
   </mat-stepper>

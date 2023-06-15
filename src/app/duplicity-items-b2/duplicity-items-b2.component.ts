@@ -4,14 +4,14 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
-  selector: 'app-duplicity-item-b1',
-  templateUrl: './duplicity-item-b1.component.html',
-  styleUrls: ['./duplicity-item-b1.component.css']
+  selector: 'app-duplicity-items-b2',
+  templateUrl: './duplicity-items-b2.component.html',
+  styleUrls: ['./duplicity-items-b2.component.css']
 })
-export class DuplicityItemB1Component implements OnInit {
-  // Define the data source and columns for the table
+export class DuplicityItemsB2Component {
+
   dataSource: MatTableDataSource<any>;
-  displayedColumns: string[] = ['Class Description', 'SKU Description', 'Similarity', 'Survived'];
+  displayedColumns: string[] = ['Class Description', 'SKU_NAME', 'Similarity', 'Survived'];
 
   // Define the MatPaginator and MatSort
   @ViewChild("paginator") paginator: MatPaginator;
@@ -21,7 +21,7 @@ export class DuplicityItemB1Component implements OnInit {
   clickedGrid:boolean = false;
 
   duplicitBannerData:any[] = [];
-  duplicitWithBrand1:any[] = [];
+  duplicitWithBrand2:any[] = [];
 
 
 
@@ -49,13 +49,13 @@ export class DuplicityItemB1Component implements OnInit {
 
   getDuplicitBannerData(){
     let data = JSON.parse(localStorage.getItem("colummAllDataRes"));
-    this.duplicitBannerData = JSON.parse(data.Items_Duplicity_within_banner1)
-    console.log(data);
+    this.duplicitBannerData = JSON.parse(data.Items_Duplicity_within_banner2)
+    console.log(this.duplicitBannerData);
 
-    this.duplicitWithBrand1 = JSON.parse(data.Duplicity_Within_Brand1)
-    console.log(this.duplicitWithBrand1);
+    this.duplicitWithBrand2 = JSON.parse(data.Duplicity_Within_Brand2)
+    console.log(this.duplicitWithBrand2);
 
-    this.dataSource = new MatTableDataSource<any>(this.duplicitWithBrand1);
+    this.dataSource = new MatTableDataSource<any>(this.duplicitWithBrand2);
 
     console.log(this.dataSource.paginator);
 
@@ -70,7 +70,7 @@ export class DuplicityItemB1Component implements OnInit {
   updateDropdown(event:any, id:any){
     console.log(event.target.textContent);
     for(let i of this.dataSource.data){
-      if(i["list1_primary_key"]  == id){
+      if(i["list2_primary_key"]  == id){
         i['Survived'] = (event.target.textContent == 'Yes'?'Y':'N');
         console.log(i['Survived'])
       }
@@ -91,6 +91,4 @@ export class DuplicityItemB1Component implements OnInit {
     }
 
   }
-
-
 }
