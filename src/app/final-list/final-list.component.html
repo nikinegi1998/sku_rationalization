@@ -1,95 +1,80 @@
 <div class="m-3">
   <div class="d-flex flex-row justify-content-between">
-    <h3 class="" style="font-weight: 595;">Final List</h3>
+    <h3 class="" style="font-weight: 595">Final List</h3>
   </div>
 
-  <div class="card mt-2 rounded-0 d-flex flex-row justify-content-between p-3"
-    style="border-color: #42b977; background-color: #ffffff; font-weight: 590">
-    <span class="my-auto" style="font-size: 1.3em; color: #3f7eff">Our standardization Rule:
+  <div
+    class="card mt-2 rounded-0 d-flex flex-row justify-content-between p-3"
+    style="border-color: #42b977; background-color: #ffffff; font-weight: 590"
+  >
+    <span class="my-auto" style="font-size: 1.3em; color: #3f7eff"
+      >Our standardization Rule:
     </span>
-
-    <span class="mx-2 p-1 my-auto text-center text-center" style="
+    <span
+    *ngFor="let dt of STD_rule"
+    class="mx-2 p-1 my-auto text-center"
+    style="
       border: none;
       outline-color: #42b977;
       outline-style: dashed;
       outline-offset: 0.1em;
       color: #42b977;
       width: 8%;
-    ">Brand</span>
-    <span class="mx-2 p-1 my-auto text-center" style="
-      border: none;
-      outline-color: #42b977;
-      outline-style: dashed;
-      outline-offset: 0.1em;
-      color: #42b977;
-      width: 8%;
-    ">Item Variant</span>
-    <span class="mx-2 p-1 my-auto text-center" style="
-      border: none;
-      outline-color: #42b977;
-      outline-style: dashed;
-      outline-offset: 0.1em;
-      color: #42b977;
-      width: 8%;
-    ">Qty</span>
-    <span class="mx-2 p-1 my-auto text-center" style="
-      border: none;
-      outline-color: #42b977;
-      outline-style: dashed;
-      outline-offset: 0.1em;
-      color: #42b977;
-      width: 8%;
-    ">UOM</span>
-    <span class="mx-2 p-1 my-auto text-center" style="
-      border: none;
-      outline-color: #42b977;
-      outline-style: dashed;
-      outline-offset: 0.1em;
-      color: #42b977;
-      width: 8%;
-    ">Pack Type</span>
-    <span class="mx-2 p-1 my-auto text-center" style="
-      border: none;
-      outline-color: #42b977;
-      outline-style: dashed;
-      outline-offset: 0.1em;
-      color: #42b977;
-      width: 8%;
-    ">Pack Size</span>
-    <span class="mx-2 p-1 my-auto text-center" style="color: #42b977">(All Inticap)</span>
+    "
+    >{{ dt }}</span
+  >
+    
+    <span class="mx-2 p-1 my-auto text-center" style="color: #42b977"
+      >(All Inticap)</span
+    >
   </div>
 
-  <table class="table mt-2">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="mt-2">
+    <div class="">
+      <table class="table mb-0">
+        <thead style="font-size: 2.1vh !important">
+          <tr>
+            <th scope="col" style="background-color: #eeeff1">
+              Old SKU Description
+            </th>
+            <th scope="col" style="background-color: #eeeff1">
+              New SKU Description
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          style="font-size: 1.9vh !important"
+          *ngFor="
+            let dt of Final_List
+              | paginate
+                : { itemsPerPage: 7, currentPage: paginator.pageIndex + 1 };
+            index as i
+          "
+        >
+          <tr>
+            <td>{{ dt['Old SKU Description'] }}</td>
+            <td>{{ dt['New SKU Description'] }}</td>
+          </tr>
+        </tbody>
+      </table>
 
-  <div class="d-flex justify-content-end m-3 mt-5 fixed-bottom mb-auto "> <button mat-raised-button color="primary"
-      class="mb-5">Continue</button></div>
+      <mat-paginator
+        class="mt-0 mb-1"
+        #paginator
+        showFirstLastButtons
+        [length]="dataSource?.data.length"
+        [pageSize]="7"
+        [pageIndex]="0"
+      >
+      </mat-paginator>
+    </div>
 
+    <!-- <div class="pagination d-flex flex-row  justify-content-between me-5">
+    <pagination-controls id="first" class=" mx-auto" (pageChange)="p = $event"></pagination-controls>
+
+    </div> -->
+  </div>
+  <!-- <div class="d-flex justify-content-end m-3 mt-5 fixed-bottom mb-auto">
+    <button mat-raised-button color="primary" class="mb-5">Continue</button>
+  </div> -->
 </div>

@@ -27,79 +27,20 @@
     <span class="my-auto" style="font-size: 1.3em; color: #3f7eff"
       >Our standardization Rule:
     </span>
+    <span
+      *ngFor="let dt of STD_rule"
+      class="mx-2 p-1 my-auto text-center"
+      style="
+        border: none;
+        outline-color: #42b977;
+        outline-style: dashed;
+        outline-offset: 0.1em;
+        color: #42b977;
+        width: 8%;
+      "
+      >{{ dt }}</span
+    >
 
-    <span
-      class="mx-2 p-1 my-auto text-center text-center"
-      style="
-        border: none;
-        outline-color: #42b977;
-        outline-style: dashed;
-        outline-offset: 0.1em;
-        color: #42b977;
-        width: 8%;
-      "
-      >Brand</span
-    >
-    <span
-      class="mx-2 p-1 my-auto text-center"
-      style="
-        border: none;
-        outline-color: #42b977;
-        outline-style: dashed;
-        outline-offset: 0.1em;
-        color: #42b977;
-        width: 8%;
-      "
-      >Item Variant</span
-    >
-    <span
-      class="mx-2 p-1 my-auto text-center"
-      style="
-        border: none;
-        outline-color: #42b977;
-        outline-style: dashed;
-        outline-offset: 0.1em;
-        color: #42b977;
-        width: 8%;
-      "
-      >Qty</span
-    >
-    <span
-      class="mx-2 p-1 my-auto text-center"
-      style="
-        border: none;
-        outline-color: #42b977;
-        outline-style: dashed;
-        outline-offset: 0.1em;
-        color: #42b977;
-        width: 8%;
-      "
-      >UOM</span
-    >
-    <span
-      class="mx-2 p-1 my-auto text-center"
-      style="
-        border: none;
-        outline-color: #42b977;
-        outline-style: dashed;
-        outline-offset: 0.1em;
-        color: #42b977;
-        width: 8%;
-      "
-      >Pack Type</span
-    >
-    <span
-      class="mx-2 p-1 my-auto text-center"
-      style="
-        border: none;
-        outline-color: #42b977;
-        outline-style: dashed;
-        outline-offset: 0.1em;
-        color: #42b977;
-        width: 8%;
-      "
-      >Pack Size</span
-    >
     <span class="mx-2 p-1 my-auto text-center" style="color: #42b977"
       >(All Inticap)</span
     >
@@ -171,56 +112,56 @@
     </thead>
     <tbody (click)="testClick($event)">
       <tr style="font-size: 1.8vh !important; font-weight: 580">
-        <td style="background-color: #99E6B2; color: #7672ed">Both</td>
-        <td style="background-color: #99E6B2">
-          {{ data.subcat_UOM_dict_Both.Both["Fluid Once"] }}
+        <td style="background-color: #99e6b2; color: #7672ed">Both</td>
+        <td style="background-color: #99e6b2">
+          {{ data.subcat_UOM_dict_Both.Both['Fluid Once'] }}
         </td>
-        <td style="background-color: #99E6B2">
-          {{ data.subcat_UOM_dict_Both.Both["Liter"] }}
+        <td style="background-color: #99e6b2">
+          {{ data.subcat_UOM_dict_Both.Both['Liter'] }}
         </td>
-        <td style="background-color: #99E6B2">
-          {{ data.subcat_UOM_dict_Both.Both["Mili Liter"] }}
+        <td style="background-color: #99e6b2">
+          {{ data.subcat_UOM_dict_Both.Both['Mili Liter'] }}
         </td>
-        <td style="background-color: #99E6B2">
-          {{ data.subcat_UOM_dict_Both.Both["Gram"] }}
+        <td style="background-color: #99e6b2">
+          {{ data.subcat_UOM_dict_Both.Both['Gram'] }}
         </td>
-        <td style="background-color: #99E6B2">
-          {{ data.subcat_UOM_dict_Both.Both["Ounce"] }}
-        </td>
-
-        <td style="background-color: #99E6B2">
-          {{ data.subcat_PackType_dict_Both.Both["Bottle"] }}
-        </td>
-        <td style="background-color: #99E6B2">
-          {{ data.subcat_PackType_dict_Both.Both["Can"] }}
-        </td>
-        <td style="background-color: #99E6B2">
-          {{ data.subcat_PackType_dict_Both.Both["Bag"] }}
-        </td>
-        <td style="background-color: #99E6B2">
-          {{ data.subcat_PackType_dict_Both.Both["Jar"] }}
-        </td>
-        <td style="background-color: #99E6B2">
-          {{ data.subcat_PackType_dict_Both.Both["Pouch"] }}
+        <td style="background-color: #99e6b2">
+          {{ data.subcat_UOM_dict_Both.Both['Ounce'] }}
         </td>
 
-        <td style="background-color: #99E6B2">
-          {{ data.subcat_PackSize_dict_Both.Both["Pack"] }}
+        <td style="background-color: #99e6b2">
+          {{ data.subcat_PackType_dict_Both.Both['Bottle'] }}
         </td>
-        <td style="background-color: #99E6B2">
-          {{ data.subcat_PackSize_dict_Both.Both["Carton"] }}
+        <td style="background-color: #99e6b2">
+          {{ data.subcat_PackType_dict_Both.Both['Can'] }}
         </td>
-        <td style="background-color: #99E6B2">
-          {{ data.subcat_PackSize_dict_Both.Both["FamilySize"] }}
+        <td style="background-color: #99e6b2">
+          {{ data.subcat_PackType_dict_Both.Both['Bag'] }}
         </td>
-        <td style="background-color: #99E6B2">
-          {{ data.subcat_PackSize_dict_Both.Both["MultiPack"] }}
+        <td style="background-color: #99e6b2">
+          {{ data.subcat_PackType_dict_Both.Both['Jar'] }}
         </td>
-        <td style="background-color: #99E6B2">
-          {{ data.subcat_PackSize_dict_Both.Both["SingleServe"] }}
+        <td style="background-color: #99e6b2">
+          {{ data.subcat_PackType_dict_Both.Both['Pouch'] }}
         </td>
-        <td style="background-color: #99E6B2">
-          {{ data.subcat_PackSize_dict_Both.Both["VarietyPack"] }}
+
+        <td style="background-color: #99e6b2">
+          {{ data.subcat_PackSize_dict_Both.Both['Pack'] }}
+        </td>
+        <td style="background-color: #99e6b2">
+          {{ data.subcat_PackSize_dict_Both.Both['Carton'] }}
+        </td>
+        <td style="background-color: #99e6b2">
+          {{ data.subcat_PackSize_dict_Both.Both['FamilySize'] }}
+        </td>
+        <td style="background-color: #99e6b2">
+          {{ data.subcat_PackSize_dict_Both.Both['MultiPack'] }}
+        </td>
+        <td style="background-color: #99e6b2">
+          {{ data.subcat_PackSize_dict_Both.Both['SingleServe'] }}
+        </td>
+        <td style="background-color: #99e6b2">
+          {{ data.subcat_PackSize_dict_Both.Both['VarietyPack'] }}
         </td>
       </tr>
       <tr style="font-size: 1.8vh !important; font-weight: 580">
@@ -233,7 +174,11 @@
               index as i
             "
           >
-            <li value="Fluid Once" [attr.id]="data1 + '-subcat_UOM_dict_Both-DT-' + i" class="my-0">
+            <li
+              value="Fluid Once"
+              [attr.id]="data1 + '-subcat_UOM_dict_Both-DT-' + i"
+              class="my-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -246,7 +191,11 @@
               index as i
             "
           >
-            <li value="Liter" [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i" class="my-0">
+            <li
+              value="Liter"
+              [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i"
+              class="my-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -259,7 +208,11 @@
               index as i
             "
           >
-            <li value="Mili Liter" [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i" class="my-0">
+            <li
+              value="Mili Liter"
+              [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i"
+              class="my-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -269,7 +222,11 @@
             class="m-0 p-0 ps-1"
             *ngFor="let data1 of data.subcat_UOM_dict_DT.DT['Gram']; index as i"
           >
-            <li value="Gram" [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i" class="my-0">
+            <li
+              value="Gram"
+              [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i"
+              class="my-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -282,7 +239,11 @@
               index as i
             "
           >
-            <li value="Ounce" [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i" class="my-0">
+            <li
+              value="Ounce"
+              [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i"
+              class="my-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -296,7 +257,11 @@
               index as i
             "
           >
-            <li value="Bottle" [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i" class="my-0">
+            <li
+              value="Bottle"
+              [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i"
+              class="my-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -309,7 +274,11 @@
               index as i
             "
           >
-            <li value="Can" [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i" class="my-0">
+            <li
+              value="Can"
+              [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i"
+              class="my-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -322,7 +291,11 @@
               index as i
             "
           >
-            <li value="Bag" [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i" class="my-0">
+            <li
+              value="Bag"
+              [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i"
+              class="my-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -335,7 +308,11 @@
               index as i
             "
           >
-            <li value="Jar" [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i" class="my-0">
+            <li
+              value="Jar"
+              [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i"
+              class="my-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -348,7 +325,11 @@
               index as i
             "
           >
-            <li value="Pouch" [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i" class="my-0">
+            <li
+              value="Pouch"
+              [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i"
+              class="my-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -362,7 +343,11 @@
               index as i
             "
           >
-            <li value="Pack" [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i" class="my-0">
+            <li
+              value="Pack"
+              [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i"
+              class="my-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -375,7 +360,11 @@
               index as i
             "
           >
-            <li value="Carton" [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i" class="my-0">
+            <li
+              value="Carton"
+              [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i"
+              class="my-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -388,7 +377,11 @@
               index as i
             "
           >
-            <li value="FamilySize" [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i" class="my-0">
+            <li
+              value="FamilySize"
+              [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i"
+              class="my-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -401,7 +394,11 @@
               index as i
             "
           >
-            <li value="MultiPack" [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i" class="my-0">
+            <li
+              value="MultiPack"
+              [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i"
+              class="my-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -414,7 +411,11 @@
               index as i
             "
           >
-            <li value="SingleServe" [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i" class="my-0">
+            <li
+              value="SingleServe"
+              [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i"
+              class="my-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -427,7 +428,11 @@
               index as i
             "
           >
-            <li value="VarietyPack" [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i" class="my-0">
+            <li
+              value="VarietyPack"
+              [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i"
+              class="my-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -443,7 +448,11 @@
               index as i
             "
           >
-            <li value="Fluid Once" [attr.id]="data1 + '-subcat_UOM_dict_Both-Fd' + i" class="my-0">
+            <li
+              value="Fluid Once"
+              [attr.id]="data1 + '-subcat_UOM_dict_Both-Fd' + i"
+              class="my-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -456,7 +465,11 @@
               index as i
             "
           >
-            <li value="Liter" [attr.id]="data1 + '-subcat_UOM_dict_Both-Fd' + i" class="my-0">
+            <li
+              value="Liter"
+              [attr.id]="data1 + '-subcat_UOM_dict_Both-Fd' + i"
+              class="my-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -469,7 +482,11 @@
               index as i
             "
           >
-            <li value="Mili Liter" [attr.id]="data1 + '-subcat_UOM_dict_Both-Fd' + i" class="m-0">
+            <li
+              value="Mili Liter"
+              [attr.id]="data1 + '-subcat_UOM_dict_Both-Fd' + i"
+              class="m-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -479,7 +496,11 @@
             class="m-0 p-0 ps-1"
             *ngFor="let data1 of data.subcat_UOM_dict_FD.Fd['Gram']; index as i"
           >
-            <li value="Gram" [attr.id]="data1 + '-subcat_UOM_dict_Both-Fd' + i" class="m-0">
+            <li
+              value="Gram"
+              [attr.id]="data1 + '-subcat_UOM_dict_Both-Fd' + i"
+              class="m-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -492,7 +513,11 @@
               index as i
             "
           >
-            <li value="Ounce" [attr.id]="data1 + '-subcat_UOM_dict_Both-Fd' + i" class="m-0">
+            <li
+              value="Ounce"
+              [attr.id]="data1 + '-subcat_UOM_dict_Both-Fd' + i"
+              class="m-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -505,7 +530,11 @@
               index as i
             "
           >
-            <li value="Bottle" [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i" class="m-0">
+            <li
+              value="Bottle"
+              [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i"
+              class="m-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -518,7 +547,11 @@
               index as i
             "
           >
-            <li value="Can" [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i" class="m-0">
+            <li
+              value="Can"
+              [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i"
+              class="m-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -531,7 +564,11 @@
               index as i
             "
           >
-            <li value="Bag" [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i" class="m-0">
+            <li
+              value="Bag"
+              [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i"
+              class="m-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -544,7 +581,11 @@
               index as i
             "
           >
-            <li value="Jar" [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i" class="m-0">
+            <li
+              value="Jar"
+              [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i"
+              class="m-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -557,7 +598,11 @@
               index as i
             "
           >
-            <li value="Pouch" [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i" class="m-0">
+            <li
+              value="Pouch"
+              [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i"
+              class="m-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -571,7 +616,11 @@
               index as i
             "
           >
-            <li value="Pack" [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i" class="m-0">
+            <li
+              value="Pack"
+              [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i"
+              class="m-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -584,7 +633,11 @@
               index as i
             "
           >
-            <li value="Carton" [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i" class="m-0">
+            <li
+              value="Carton"
+              [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i"
+              class="m-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -597,7 +650,11 @@
               index as i
             "
           >
-            <li value="FamilySize" [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i" class="m-0">
+            <li
+              value="FamilySize"
+              [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i"
+              class="m-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -610,7 +667,11 @@
               index as i
             "
           >
-            <li value="MultiPack" [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i" class="m-0">
+            <li
+              value="MultiPack"
+              [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i"
+              class="m-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -623,20 +684,28 @@
               index as i
             "
           >
-            <li value="SingleServe" [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i" class="m-0">
+            <li
+              value="SingleServe"
+              [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i"
+              class="m-0"
+            >
               {{ data1 }}
             </li>
           </ul>
         </td>
         <td style="cursor: pointer">
           <ul
-            class="m-0  p-0 ps-1"
+            class="m-0 p-0 ps-1"
             *ngFor="
               let data1 of data.subcat_PackSize_dict_FD.Fd['VarietyPack'];
               index as i
             "
           >
-            <li value="VarietyPack" [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i" class="m-0">
+            <li
+              value="VarietyPack"
+              [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i"
+              class="m-0"
+            >
               {{ data1 }}
             </li>
           </ul>
@@ -646,6 +715,13 @@
   </table>
 
   <div class="d-flex justify-content-end m-3 mt-5 fixed-bottom mb-auto">
-    <button mat-raised-button color="primary" class="mb-5" routerLink="/duplicitItemsB1">Continue</button>
+    <button
+      mat-raised-button
+      color="primary"
+      class="mb-5"
+      (click)="changeSTDrule()"
+    >
+      Continue
+    </button>
   </div>
 </div>
