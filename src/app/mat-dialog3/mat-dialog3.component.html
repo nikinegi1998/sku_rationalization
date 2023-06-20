@@ -1,0 +1,40 @@
+<div class="m-3  ">
+  <div class="d-flex flex-row justify-content-between" *ngIf="clickedOnYes" >
+    <i class="bi bi-caret-left-fill" (click) = "onLeftClick()" style="cursor: pointer;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16" >
+        <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+      </svg>
+    </i>
+    <span class="card border border-0">
+      <mat-icon mat-dialog-close class="bg-dark rounded-circle ms-auto text-light " style="cursor: pointer;">close</mat-icon>
+    </span>
+  </div>
+  <span class="card border border-0" *ngIf="!clickedOnYes" >
+    <mat-icon mat-dialog-close class="bg-dark rounded-circle ms-auto text-light " style="cursor: pointer;">close</mat-icon>
+  </span>
+  <div class="modal-body text-center">
+    <div class="card p-3  rounded-circle" style="background-color: #EEEFF1;border-color: #E2E5F2;display:inline-block">
+
+      <img src="../../assets/Classification_42px.svg" class="mx-auto" alt="">
+    </div>
+    <h5 style="color: #3F7EFF;">Do You Want To Correct The Classification?</h5>
+    <p style="color: #969EA3;">Click on Yes to choose the Column</p>
+    <div class="dropdown" *ngIf="clickedOnYes">
+      <button class="mb-3 btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Select a Column
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" >Action</a></li>
+        <li><a class="dropdown-item" >Another action</a></li>
+        <li><a class="dropdown-item" >Something else here</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="btn btn-light border border-secondary px-4 me-2" routerLink="/finalList"  mat-dialog-close (click)="onClickSkip()">Skip</div>
+      <div class="btn btn-primary border border-secondary px-4" style="background-color: #3F7EFF;" (click)="onClickYes()" *ngIf="!clickedOnYes">Yes</div>
+      <div class="btn btn-primary border border-secondary px-4" style="background-color: #3F7EFF;" mat-dialog-close routerLink="/itemClassification" *ngIf="clickedOnYes">Yes</div>
+
+
+    </div>
+  </div>
+</div>

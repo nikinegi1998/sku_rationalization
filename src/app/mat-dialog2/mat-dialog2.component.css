@@ -1,0 +1,7 @@
+.custom-chip-option:not(.mat-chip-selected) {
+  background-color: transparent!important; /* Set your desired background color here */
+  color: black!important; /* Set your desired text color here */
+
+}
+
+
