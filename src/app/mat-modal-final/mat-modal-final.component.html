@@ -17,26 +17,71 @@
         border-color: #e2e5f2;
       "
     >
-    <img src="../../assets/Classification_42px.png" srcset="" height="50" width="50" alt="" />
+      <img
+        src="../../assets/Classification_42px.png"
+        srcset=""
+        height="50"
+        width="50"
+        alt=""
+      />
     </div>
-    <h5 class="mt-4" style="color: #3f7eff">
-      Do You Want To Correct The Classificaton?
-    </h5>
-    <small style="color: #969ea3"
-      >Click on Yes to choose the column.</small
-    >
+    <div *ngIf="!classificationFlag">
+      <h5 class="mt-4" style="color: #3f7eff">
+        Do You Want To Correct The Classificaton?
+      </h5>
+      <small style="color: #969ea3">Click on Yes to choose the column.</small>
+    </div>
+    <div *ngIf="classificationFlag">
+      <h5 class="mt-4" style="color: #3f7eff">
+        Please Select The Column From The Dropdown.
+      </h5>
+      <small style="color: #969ea3"
+        >This selection would help you in classification.</small
+      >
+
+      <div class="d-flex">
+        <select
+          [(ngModel)]="colA"
+          class="form-select"
+          aria-label="Default select example"
+        >
+          <option value="" selected>Select A Column</option>
+          <option *ngFor="let data of dropdown.DropDown_List1" [value]="data">
+            {{ data }}
+          </option>
+        </select>
+
+        <select
+          [(ngModel)]="colB"
+          class="form-select"
+          aria-label="Default select example"
+        >
+          <option value="" selected>Select B Column</option>
+          <option *ngFor="let data of dropdown.DropDown_List2" [value]="data">
+            {{ data }}
+          </option>
+        </select>
+      </div>
+    </div>
   </div>
   <div class="m-2 mb-3 mx-auto d-flex justify-content-center mt-3">
     <div class="modal-footer border-0 d-flex justify-content-center">
       <button
         type="button"
         class="btn btn-sm btn-outline-secondary px-5 me-2"
-        data-bs-dismiss="modal" mat-dialog-close
+        data-bs-dismiss="modal"
+        mat-dialog-close
         routerLink="/finalList"
       >
         Skip
       </button>
-      <button type="button" class="btn-sm btn px-5 btn-primary">Yes</button>
+      <button
+        type="button"
+        (click)="getdropdown()"
+        class="btn-sm btn px-5 btn-primary"
+      >
+        Yes
+      </button>
     </div>
   </div>
 </div>
