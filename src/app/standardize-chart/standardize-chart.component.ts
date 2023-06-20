@@ -27,7 +27,7 @@ export class StandardizeChartComponent implements OnInit {
     let vl: any = localStorage.getItem("colummAllDataRes")
 
     this.STD_rule = JSON.parse(vl).Final_Standardization_Chart.Standardization_Rule
-    console.log(vl, this.STD_rule, "STD rule");
+    // console.log(vl, this.STD_rule, "STD rule");
 
     // this.apiService.getColumnRes().subscribe({
     //   next: (res: any) => {
@@ -41,24 +41,37 @@ export class StandardizeChartComponent implements OnInit {
   }
 
   testClick(event: any) {
-    console.log("Event", event.target.getAttribute('value'), event.target);
-    let id = event.target.id
+
+
+
+    // console.log(this.data[keyName].Both[value]);
+
+    if(event.target.checked == true){
+      console.log("Event", event.target.getAttribute('value'), event.target);
+      console.log(event.target,"CJECJKEF");
+      let id = event.target.id
     id = id.split("-")
     console.log(id);
 
     let keyName = id[1]
 
     let value = event.target.getAttribute('value')
-
-    this.data[keyName].Both[value] = event.target.textContent
-
-
-    console.log(this.data[keyName].Both[value]);
+    let name = event.target.getAttribute('name')
 
 
-    document.getElementById(event.target.id).style.color = "green";
+    this.data[keyName].Both[name] = value
+
+    console.log(this.data[keyName]);
+
+
+    // document.getElementById(event.target.id).style.color = "green";
 
     localStorage.setItem("colummRes", JSON.stringify(this.data))
+
+    }
+
+
+
 
   }
 
@@ -66,7 +79,7 @@ export class StandardizeChartComponent implements OnInit {
     let data = JSON.parse(localStorage.getItem("colummRes"))
 
     // console.log(data, "data");
-    
+
     let body = {
       "STD_Rules": [
         "Item Variant",
@@ -106,7 +119,7 @@ export class StandardizeChartComponent implements OnInit {
       }
     }
     // console.log(body, "body val");
-    
+
     this.apiService.updateChartDetail(body).subscribe(
       res => {
         console.log(res, "update standardization chart rule");

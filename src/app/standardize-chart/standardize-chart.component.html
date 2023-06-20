@@ -6,50 +6,31 @@
   </p>
 
   <div class="mt-0 ms-auto d-flex flex-row">
-    <span
-      class="mt-1 me-1 rounded-circle"
-      style="padding: 0.5rem; background-color: #42b977; height: 1vh"
-    ></span>
+    <span class="mt-1 me-1 rounded-circle" style="padding: 0.5rem; background-color: #42b977; height: 1vh"></span>
     <span class="pb-4" style="color: #969ea3">Suggestion</span>
 
-    <div
-      class="mt-1 ms-3 me-1 rounded-circle"
-      style="background-color: #dedede; height: 1vh; padding: 0.5rem"
-    ></div>
+    <div class="mt-1 ms-3 me-1 rounded-circle" style="background-color: #dedede; height: 1vh; padding: 0.5rem"></div>
     <span class="mt-0 me-3" style="color: #969ea3">Open To Custom</span>
   </div>
 </div>
 <div class="mx-3">
-  <div
-    class="card rounded-0 d-flex flex-row justify-content-between p-3"
-    style="border-color: #42b977; background-color: #ffffff; font-weight: 590"
-  >
-    <span class="my-auto" style="font-size: 1.3em; color: #3f7eff"
-      >Our standardization Rule:
+  <div class="card rounded-0 d-flex flex-row justify-content-between p-3"
+    style="border-color: #42b977; background-color: #ffffff; font-weight: 590">
+    <span class="my-auto" style="font-size: 1.3em; color: #3f7eff">Our standardization Rule:
     </span>
-    <span
-      *ngFor="let dt of STD_rule"
-      class="mx-2 p-1 my-auto text-center"
-      style="
+    <span *ngFor="let dt of STD_rule" class="mx-2 p-1 my-auto text-center" style="
         border: none;
         outline-color: #42b977;
         outline-style: dashed;
         outline-offset: 0.1em;
         color: #42b977;
         width: 8%;
-      "
-      >{{ dt }}</span
-    >
+      ">{{ dt }}</span>
 
-    <span class="mx-2 p-1 my-auto text-center" style="color: #42b977"
-      >(All Inticap)</span
-    >
+    <span class="mx-2 p-1 my-auto text-center" style="color: #42b977">(All Inticap)</span>
   </div>
 
-  <div
-    class="card rounded-0 border border-0 d-flex flex-row mt-3"
-    style="font-size: 1.8vh !important; color: #7672ed"
-  >
+  <div class="card rounded-0 border border-0 d-flex flex-row mt-3" style="font-size: 1.8vh !important; color: #7672ed">
     <th class="text-center" style="background-color: #dcdbfa; width: 3.7%">
       Banner
     </th>
@@ -66,39 +47,33 @@
   <table class="table">
     <thead>
       <tr style="font-size: 1.8vh !important">
-        <th
-          style="
+        <th style="
             background-color: #dcdbfa;
             color: #7672ed;
             border-right: 1px solid #ccc;
-          "
-        >
+          ">
           All
         </th>
         <th style="background-color: #dcdbfa; color: #7672ed">Fluid Once</th>
         <th style="background-color: #dcdbfa; color: #7672ed">Liter</th>
         <th style="background-color: #dcdbfa; color: #7672ed">Milli Liter</th>
         <th style="background-color: #dcdbfa; color: #7672ed">Gram</th>
-        <th
-          style="
+        <th style="
             background-color: #dcdbfa;
             color: #7672ed;
             border-right: 1px solid #ccc;
-          "
-        >
+          ">
           Ounce
         </th>
         <th style="background-color: #dcdbfa; color: #7672ed">Bottle</th>
         <th style="background-color: #dcdbfa; color: #7672ed">Can</th>
         <th style="background-color: #dcdbfa; color: #7672ed">Bag</th>
         <th style="background-color: #dcdbfa; color: #7672ed">Jar</th>
-        <th
-          style="
+        <th style="
             background-color: #dcdbfa;
             color: #7672ed;
             border-right: 1px solid #ccc;
-          "
-        >
+          ">
           Pouch
         </th>
 
@@ -167,272 +142,171 @@
       <tr style="font-size: 1.8vh !important; font-weight: 580">
         <td style="color: #7672ed">DT</td>
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_UOM_dict_DT.DT['Fluid Once'];
               index as i
-            "
-          >
-            <li
-              value="Fluid Once"
-              [attr.id]="data1 + '-subcat_UOM_dict_Both-DT-' + i"
-              class="my-0"
-            >
+            ">
+            <li value="Fluid Once" [attr.id]="data1 + '-subcat_UOM_dict_Both-DT-' + i" class="my-0">
               {{ data1 }}
             </li>
           </ul>
         </td>
-        <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+        <td style="cursor: pointer" class="ms-0 ps-0">
+          <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_UOM_dict_DT.DT['Liter']; index as i">
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i"  value = {{data1}} [name]="'Liter'" >
+            <label class="form-check-labe " [attr.for]="'radio-' + i">{{ data1 }}</label>
+          </div>
+        </td>
+
+        <!-- <td style="cursor: pointer">
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_UOM_dict_DT.DT['Liter'];
               index as i
-            "
-          >
-            <li
-              value="Liter"
-              [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i"
-              class="my-0"
-            >
+            ">
+              <input class="form-check-input" type="radio" name="{{i}}" [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i">
+              <label class="form-check-label" >
+                {{ data1 }}
+              </label> -->
+            <!-- <li value="Liter" [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i" class="my-0">
               {{ data1 }}
-            </li>
-          </ul>
-        </td>
+            </li> -->
+          <!-- </ul> -->
+        <!-- </td> -->
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_UOM_dict_DT.DT['Mili Liter'];
               index as i
-            "
-          >
-            <li
-              value="Mili Liter"
-              [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i"
-              class="my-0"
-            >
+            ">
+            <li value="Mili Liter" [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i" class="my-0">
               {{ data1 }}
             </li>
           </ul>
         </td>
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="let data1 of data.subcat_UOM_dict_DT.DT['Gram']; index as i"
-          >
-            <li
-              value="Gram"
-              [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i"
-              class="my-0"
-            >
+          <ul class="m-0 p-0 ps-1" *ngFor="let data1 of data.subcat_UOM_dict_DT.DT['Gram']; index as i">
+            <li value="Gram" [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i" class="my-0">
               {{ data1 }}
             </li>
           </ul>
         </td>
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_UOM_dict_DT.DT['Ounce'];
               index as i
-            "
-          >
-            <li
-              value="Ounce"
-              [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i"
-              class="my-0"
-            >
+            ">
+            <li value="Ounce" [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i" class="my-0">
               {{ data1 }}
             </li>
           </ul>
         </td>
 
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_PackType_dict_DT.DT['Bottle'];
               index as i
-            "
-          >
-            <li
-              value="Bottle"
-              [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i"
-              class="my-0"
-            >
+            ">
+            <li value="Bottle" [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i" class="my-0">
               {{ data1 }}
             </li>
           </ul>
         </td>
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_PackType_dict_DT.DT['Can'];
               index as i
-            "
-          >
-            <li
-              value="Can"
-              [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i"
-              class="my-0"
-            >
+            ">
+            <li value="Can" [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i" class="my-0">
               {{ data1 }}
             </li>
           </ul>
         </td>
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_PackType_dict_DT.DT['Bag'];
               index as i
-            "
-          >
-            <li
-              value="Bag"
-              [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i"
-              class="my-0"
-            >
+            ">
+            <li value="Bag" [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i" class="my-0">
               {{ data1 }}
             </li>
           </ul>
         </td>
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_PackType_dict_DT.DT['Jar'];
               index as i
-            "
-          >
-            <li
-              value="Jar"
-              [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i"
-              class="my-0"
-            >
+            ">
+            <li value="Jar" [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i" class="my-0">
               {{ data1 }}
             </li>
           </ul>
         </td>
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_PackType_dict_DT.DT['Pouch'];
               index as i
-            "
-          >
-            <li
-              value="Pouch"
-              [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i"
-              class="my-0"
-            >
+            ">
+            <li value="Pouch" [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i" class="my-0">
               {{ data1 }}
             </li>
           </ul>
         </td>
 
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_PackSize_dict_DT.DT['Pack'];
               index as i
-            "
-          >
-            <li
-              value="Pack"
-              [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i"
-              class="my-0"
-            >
+            ">
+            <li value="Pack" [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i" class="my-0">
               {{ data1 }}
             </li>
           </ul>
         </td>
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_PackSize_dict_DT.DT['Carton'];
               index as i
-            "
-          >
-            <li
-              value="Carton"
-              [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i"
-              class="my-0"
-            >
+            ">
+            <li value="Carton" [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i" class="my-0">
               {{ data1 }}
             </li>
           </ul>
         </td>
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_PackSize_dict_DT.DT['FamilySize'];
               index as i
-            "
-          >
-            <li
-              value="FamilySize"
-              [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i"
-              class="my-0"
-            >
+            ">
+            <li value="FamilySize" [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i" class="my-0">
               {{ data1 }}
             </li>
           </ul>
         </td>
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_PackSize_dict_DT.DT['MultiPack'];
               index as i
-            "
-          >
-            <li
-              value="MultiPack"
-              [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i"
-              class="my-0"
-            >
+            ">
+            <li value="MultiPack" [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i" class="my-0">
               {{ data1 }}
             </li>
           </ul>
         </td>
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_PackSize_dict_DT.DT['SingleServe'];
               index as i
-            "
-          >
-            <li
-              value="SingleServe"
-              [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i"
-              class="my-0"
-            >
+            ">
+            <li value="SingleServe" [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i" class="my-0">
               {{ data1 }}
             </li>
           </ul>
         </td>
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_PackSize_dict_DT.DT['VarietyPack'];
               index as i
-            "
-          >
-            <li
-              value="VarietyPack"
-              [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i"
-              class="my-0"
-            >
+            ">
+            <li value="VarietyPack" [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i" class="my-0">
               {{ data1 }}
             </li>
           </ul>
@@ -441,271 +315,159 @@
       <tr style="font-size: 1.8vh !important; font-weight: 580">
         <td style="color: #7672ed">FD</td>
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_UOM_dict_FD.Fd['Fluid Once'];
               index as i
-            "
-          >
-            <li
-              value="Fluid Once"
-              [attr.id]="data1 + '-subcat_UOM_dict_Both-Fd' + i"
-              class="my-0"
-            >
+            ">
+            <li value="Fluid Once" [attr.id]="data1 + '-subcat_UOM_dict_Both-Fd' + i" class="my-0">
               {{ data1 }}
             </li>
           </ul>
         </td>
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_UOM_dict_FD.Fd['Liter'];
               index as i
-            "
-          >
-            <li
-              value="Liter"
-              [attr.id]="data1 + '-subcat_UOM_dict_Both-Fd' + i"
-              class="my-0"
-            >
+            ">
+            <li value="Liter" [attr.id]="data1 + '-subcat_UOM_dict_Both-Fd' + i" class="my-0">
               {{ data1 }}
             </li>
           </ul>
         </td>
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_UOM_dict_FD.Fd['Mili Liter'];
               index as i
-            "
-          >
-            <li
-              value="Mili Liter"
-              [attr.id]="data1 + '-subcat_UOM_dict_Both-Fd' + i"
-              class="m-0"
-            >
+            ">
+            <li value="Mili Liter" [attr.id]="data1 + '-subcat_UOM_dict_Both-Fd' + i" class="m-0">
               {{ data1 }}
             </li>
           </ul>
         </td>
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="let data1 of data.subcat_UOM_dict_FD.Fd['Gram']; index as i"
-          >
-            <li
-              value="Gram"
-              [attr.id]="data1 + '-subcat_UOM_dict_Both-Fd' + i"
-              class="m-0"
-            >
+          <ul class="m-0 p-0 ps-1" *ngFor="let data1 of data.subcat_UOM_dict_FD.Fd['Gram']; index as i">
+            <li value="Gram" [attr.id]="data1 + '-subcat_UOM_dict_Both-Fd' + i" class="m-0">
               {{ data1 }}
             </li>
           </ul>
         </td>
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_UOM_dict_FD.Fd['Ounce'];
               index as i
-            "
-          >
-            <li
-              value="Ounce"
-              [attr.id]="data1 + '-subcat_UOM_dict_Both-Fd' + i"
-              class="m-0"
-            >
+            ">
+            <li value="Ounce" [attr.id]="data1 + '-subcat_UOM_dict_Both-Fd' + i" class="m-0">
               {{ data1 }}
             </li>
           </ul>
         </td>
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_PackType_dict_FD.Fd['Bottle'];
               index as i
-            "
-          >
-            <li
-              value="Bottle"
-              [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i"
-              class="m-0"
-            >
+            ">
+            <li value="Bottle" [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i" class="m-0">
               {{ data1 }}
             </li>
           </ul>
         </td>
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_PackType_dict_FD.Fd['Can'];
               index as i
-            "
-          >
-            <li
-              value="Can"
-              [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i"
-              class="m-0"
-            >
+            ">
+            <li value="Can" [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i" class="m-0">
               {{ data1 }}
             </li>
           </ul>
         </td>
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_PackType_dict_FD.Fd['Bag'];
               index as i
-            "
-          >
-            <li
-              value="Bag"
-              [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i"
-              class="m-0"
-            >
+            ">
+            <li value="Bag" [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i" class="m-0">
               {{ data1 }}
             </li>
           </ul>
         </td>
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_PackType_dict_FD.Fd['Jar'];
               index as i
-            "
-          >
-            <li
-              value="Jar"
-              [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i"
-              class="m-0"
-            >
+            ">
+            <li value="Jar" [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i" class="m-0">
               {{ data1 }}
             </li>
           </ul>
         </td>
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_PackType_dict_FD.Fd['Pouch'];
               index as i
-            "
-          >
-            <li
-              value="Pouch"
-              [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i"
-              class="m-0"
-            >
+            ">
+            <li value="Pouch" [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i" class="m-0">
               {{ data1 }}
             </li>
           </ul>
         </td>
 
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_PackSize_dict_FD.Fd['Pack'];
               index as i
-            "
-          >
-            <li
-              value="Pack"
-              [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i"
-              class="m-0"
-            >
+            ">
+            <li value="Pack" [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i" class="m-0">
               {{ data1 }}
             </li>
           </ul>
         </td>
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_PackSize_dict_FD.Fd['Carton'];
               index as i
-            "
-          >
-            <li
-              value="Carton"
-              [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i"
-              class="m-0"
-            >
+            ">
+            <li value="Carton" [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i" class="m-0">
               {{ data1 }}
             </li>
           </ul>
         </td>
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_PackSize_dict_FD.Fd['FamilySize'];
               index as i
-            "
-          >
-            <li
-              value="FamilySize"
-              [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i"
-              class="m-0"
-            >
+            ">
+            <li value="FamilySize" [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i" class="m-0">
               {{ data1 }}
             </li>
           </ul>
         </td>
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_PackSize_dict_FD.Fd['MultiPack'];
               index as i
-            "
-          >
-            <li
-              value="MultiPack"
-              [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i"
-              class="m-0"
-            >
+            ">
+            <li value="MultiPack" [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i" class="m-0">
               {{ data1 }}
             </li>
           </ul>
         </td>
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_PackSize_dict_FD.Fd['SingleServe'];
               index as i
-            "
-          >
-            <li
-              value="SingleServe"
-              [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i"
-              class="m-0"
-            >
+            ">
+            <li value="SingleServe" [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i" class="m-0">
               {{ data1 }}
             </li>
           </ul>
         </td>
         <td style="cursor: pointer">
-          <ul
-            class="m-0 p-0 ps-1"
-            *ngFor="
+          <ul class="m-0 p-0 ps-1" *ngFor="
               let data1 of data.subcat_PackSize_dict_FD.Fd['VarietyPack'];
               index as i
-            "
-          >
-            <li
-              value="VarietyPack"
-              [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i"
-              class="m-0"
-            >
+            ">
+            <li value="VarietyPack" [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i" class="m-0">
               {{ data1 }}
             </li>
           </ul>
@@ -715,12 +477,7 @@
   </table>
 
   <div class="d-flex justify-content-end m-3 mt-5 fixed-bottom mb-auto">
-    <button
-      mat-raised-button
-      color="primary"
-      class="mb-5"
-      (click)="changeSTDrule()"
-    >
+    <button mat-raised-button color="primary" class="mb-5" (click)="changeSTDrule()">
       Continue
     </button>
   </div>
