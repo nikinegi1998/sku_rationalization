@@ -16,6 +16,7 @@ export class ApiService {
 
   retailSkuTablePage2: any;
   updateChartAPI: any
+  classificationAPI: any
 
   private columnRes$ = new Subject<any>();
 
@@ -26,11 +27,13 @@ export class ApiService {
       this.sendFilesApi = "https://demo.jktech.in:3000/process-file/uploadfile?folder_name=SKU_Rationalization Files";
       this.retailSkuTablePage2 = "http://52.172.146.146:3000/process-json/Retail-SKU";
       this.updateChartAPI = "http://52.172.146.146:3000/process-json/SKU-updateSTD"
+      this.classificationAPI = "http://52.172.146.146:3000/process-json/SKU-catReclass"
     }
     else {
       this.sendFilesApi = `https://${this.hostname}:${this.PORT}/process-file/uploadfile?folder_name=SKU_Rationalization Files`;
       this.retailSkuTablePage2 = `https://${this.hostname}:${this.PORT}/process-json/Retail-SKU`;
       this.updateChartAPI = `https://${this.hostname}:${this.PORT}/process-json/SKU-updateSTD`
+      this.classificationAPI = `http://${this.hostname}:${this.PORT}/process-json/SKU-catReclass`
     }
   }
 
@@ -60,6 +63,10 @@ export class ApiService {
   }
 
   updateChartDetail(body) {
-    return this.http.post(this.updateChartAPI, body)
+    return this.http.post(this.updateChartAPI, body);
+  }
+
+  updateClassification(body) {
+    return this.http.post(this.classificationAPI, body);
   }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-item-classification',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class ItemClassificationComponent {
 
+  constructor(private route: ActivatedRoute) {
+    route.paramMap.subscribe(res => {
+      console.log(res);
+    })
+  }
 }
