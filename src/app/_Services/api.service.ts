@@ -30,7 +30,7 @@ export class ApiService {
     else {
       this.sendFilesApi = `https://${this.hostname}:${this.PORT}/process-file/uploadfile?folder_name=SKU_Rationalization Files`;
       this.retailSkuTablePage2 = `https://${this.hostname}:${this.PORT}/process-json/Retail-SKU`;
-      this.updateChartAPI = `http://${this.hostname}:${this.PORT}/process-json/SKU-updateSTD`
+      this.updateChartAPI = `https://${this.hostname}:${this.PORT}/process-json/SKU-updateSTD`
     }
   }
 
