@@ -16,21 +16,21 @@ export class MatDialog2Component implements OnInit {
 
 
   displayedColumns1: string[] = ['Class Description', 'Sub Department Description', 'Sub Class Description', 'SKU Description', 'SKU Id'];
-  displayedColumns2: string[] = ['DIVISION_NAME', 'DEPT_NAME',"CLASS_NAME", "SUBCLASS_NAME", 'SKU Type', 'SKU_NAME', 'SKU_ID'];
+  displayedColumns2: string[] = ['DIVISION_NAME', 'DEPT_NAME', "CLASS_NAME", "SUBCLASS_NAME", 'SKU Type', 'SKU_NAME', 'SKU_ID'];
 
   dataSource1: MatTableDataSource<any>
   dataSource2: MatTableDataSource<any>
 
-  selectedColumn1:any;
-  selectedColumn2:any;
+  selectedColumn1: any;
+  selectedColumn2: any;
 
-  indexNumber:number = 0;
+  indexNumber: number = 0;
 
 
   list1: any = []
   list2: any = []
 
-  constructor(private apiService: ApiService, private router:Router) {
+  constructor(private apiService: ApiService, private router: Router) {
 
   }
   ngOnInit() {
@@ -57,29 +57,30 @@ export class MatDialog2Component implements OnInit {
 
 
 
-  onChipOptionClick1(data:any){
-    console.log("cLICKED",data);
+  onChipOptionClick1(data: any) {
+    console.log("cLICKED", data);
     this.selectedColumn1 = data;
   }
-  onChipOptionClick2(data:any){
-    console.log("cLICKED",data);
+  onChipOptionClick2(data: any) {
+    console.log("cLICKED", data);
     this.selectedColumn2 = data;
   }
 
-  changeMatTabIndexNo(){
+  changeMatTabIndexNo() {
     this.indexNumber = 1;
   }
 
-  sendColumn(){
+  sendColumn() {
 
     let body = {
-      "Selected Columns": {"list1":[this.selectedColumn1], "list2":[this.selectedColumn2]}
+      "Selected Columns": { "list1": [this.selectedColumn1], "list2": [this.selectedColumn2] }
     }
     console.log(body);
 
+    localStorage.setItem('col_payload', JSON.stringify(body))
     this.apiService.sendColumnNames(body).subscribe({
-      next: (res:any) => {
-        console.log("RESS",res);
+      next: (res: any) => {
+        console.log("RESS", res);
         this.apiService.sendColumnRes(res)
         localStorage.setItem("colummRes", JSON.stringify(res.Final_Standardization_Chart))
         localStorage.setItem("colummAllDataRes", JSON.stringify(res))

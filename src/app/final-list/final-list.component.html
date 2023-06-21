@@ -11,19 +11,19 @@
       >Our standardization Rule:
     </span>
     <span
-    *ngFor="let dt of STD_rule"
-    class="mx-2 p-1 my-auto text-center"
-    style="
-      border: none;
-      outline-color: #42b977;
-      outline-style: dashed;
-      outline-offset: 0.1em;
-      color: #42b977;
-      width: 8%;
-    "
-    >{{ dt }}</span
-  >
-    
+      *ngFor="let dt of STD_rule"
+      class="mx-2 p-1 my-auto text-center"
+      style="
+        border: none;
+        outline-color: #42b977;
+        outline-style: dashed;
+        outline-offset: 0.1em;
+        color: #42b977;
+        width: 8%;
+      "
+      >{{ dt }}</span
+    >
+
     <span class="mx-2 p-1 my-auto text-center" style="color: #42b977"
       >(All Inticap)</span
     >
@@ -34,6 +34,9 @@
       <table class="table mb-0">
         <thead style="font-size: 2.1vh !important">
           <tr>
+            <th scope="col" style="background-color: #eeeff1">
+              Class Description
+            </th>
             <th scope="col" style="background-color: #eeeff1">
               Old SKU Description
             </th>
@@ -52,6 +55,7 @@
           "
         >
           <tr>
+            <td>{{ dt['Class Description'] }}</td>
             <td>{{ dt['Old SKU Description'] }}</td>
             <td>{{ dt['New SKU Description'] }}</td>
           </tr>

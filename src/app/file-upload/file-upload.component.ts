@@ -21,6 +21,9 @@ export class FileUploadComponent implements OnInit {
   success1:boolean = false;
   success2:boolean = false;
 
+  filename1=''
+  filename2=''
+
   constructor(private apiService: ApiService, private dialog: MatDialog,private _snackBar: MatSnackBar) {
    }
 
@@ -74,6 +77,7 @@ export class FileUploadComponent implements OnInit {
       next: (data: any) => {
         console.log(data);
         this.success1 = true;
+        this.filename1 = fileField.files[0].name
         this.openSnackBar(`${fileField.files[0].name} Uploaded Successfully`, 'x')
       },
       error: (error: any) => {
@@ -96,6 +100,7 @@ export class FileUploadComponent implements OnInit {
       next: (data: any) => {
         console.log(data);
         this.success2 = true;
+        this.filename1 = fileField.files[0].name
         this.openSnackBar(`${fileField.files[0].name} Uploaded Successfully`, 'x')
 
       }

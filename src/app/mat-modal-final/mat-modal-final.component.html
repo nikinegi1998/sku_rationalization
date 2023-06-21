@@ -39,10 +39,10 @@
         >This selection would help you in classification.</small
       >
 
-      <div class="d-flex">
+      <div class="d-flex mt-1">
         <select
           [(ngModel)]="colA"
-          class="form-select"
+          class="form-select me-1"
           aria-label="Default select example"
         >
           <option value="" selected>Select A Column</option>
@@ -76,8 +76,18 @@
         Skip
       </button>
       <button
+        *ngIf="!closedialgBox"
         type="button"
         (click)="getdropdown()"
+        class="btn-sm btn px-5 btn-primary"
+      >
+        Yes
+      </button>
+      <button
+        *ngIf="closedialgBox"
+        type="button"
+        (click)="updateColClassification()"
+        mat-dialog-close
         class="btn-sm btn px-5 btn-primary"
       >
         Yes

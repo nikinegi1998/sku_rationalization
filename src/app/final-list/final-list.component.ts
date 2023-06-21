@@ -28,22 +28,36 @@ export class FinalListComponent implements OnInit {
   getChartData() {
 
 
-    let vl = JSON.parse(localStorage.getItem("colummAllDataRes"))
 
-    this.Final_List = JSON.parse(vl.Final_List)
-    console.log(this.Final_List, "Final_List");
+    let col_payload = JSON.parse(localStorage.getItem('col_payload'))
+
+    // this.apiService.
+    this.apiService.sendColumnNames(col_payload).subscribe({
+      next: (res: any) => {
+        console.log("RESS", res);
+        this.apiService.sendColumnRes(res)
+        localStorage.setItem("colummRes", JSON.stringify(res.Final_Standardization_Chart))
+        localStorage.setItem("colummAllDataRes", JSON.stringify(res))
 
 
-    this.dataSource = new MatTableDataSource<any>(this.Final_List);
+        let vl = JSON.parse(localStorage.getItem("colummAllDataRes"))
 
-    console.log(this.dataSource.paginator);
-    this.STD_rule = vl.Final_Standardization_Chart.Standardization_Rule
-    console.log(vl, this.STD_rule, "STD rule");
+        this.Final_List = JSON.parse(vl.Final_List)
+        console.log(this.Final_List, "Final_List");
+        this.dataSource = new MatTableDataSource<any>(this.Final_List);
+
+        console.log(this.dataSource.paginator);
+        this.STD_rule = vl.Final_Standardization_Chart.Standardization_Rule
+        console.log(vl, this.STD_rule, "STD rule");
 
 
-    // Set the paginator and sort for the MatTableDataSource
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+        // Set the paginator and sort for the MatTableDataSource
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+
+      }
+    })
+
 
   }
 

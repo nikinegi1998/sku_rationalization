@@ -14,24 +14,24 @@ export class MatModalFinalComponent {
   dropdown: any
 
   classificationFlag = false
+  closedialgBox = false
   colA = ''
   colB = ''
-  constructor(private router: Router, private apiService: ApiService) { }
+  constructor(private dialog: MatDialog, private router: Router, private apiService: ApiService) { }
 
 
   getdropdown() {
-    if (this.classificationFlag === true) {
-      this.updateColClassification()
-    }
-    else {
-      this.apiService.updateClassification({}).subscribe(res => {
-        this.dropdown = res
-        console.log(this.dropdown, "dropdown");
-        this.classificationFlag = true
-      })
-    }
+
+    this.apiService.updateClassification({}).subscribe(res => {
+      this.dropdown = res
+      console.log(this.dropdown, "dropdown");
+      this.classificationFlag = true
+      this.closedialgBox = true
+    })
   }
   updateColClassification() {
+    console.log(this.colA, this.colB, "col value");
+    
     if (this.colA !== '' || this.colB !== '') {
       this.apiService.updateClassification({
         "selected_column1_reclassification": this.colA,
@@ -39,7 +39,8 @@ export class MatModalFinalComponent {
       }).subscribe(res => {
         console.log(res, "res====>");
 
-        // this.router.navigateByUrl("/itemClassification", res)
+        this.router.navigate(["/itemClassification"], { state: res })
+        //  { queryParams: { classifications: res } })
 
       })
     }
