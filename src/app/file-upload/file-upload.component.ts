@@ -4,7 +4,7 @@ import { ApiService } from '../_Services/api.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 import { MatModal1Component } from '../mat-modal1/mat-modal1.component';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -16,22 +16,22 @@ export class FileUploadComponent implements OnInit {
   @ViewChild("inputFileId1") inputFile1: ElementRef
   @ViewChild("inputFileId2") inputFile2: ElementRef
 
-  @ViewChild("snackBar1") snackBar1:ElementRef
+  @ViewChild("snackBar1") snackBar1: ElementRef
 
-  success1:boolean = false;
-  success2:boolean = false;
+  success1: boolean = false;
+  success2: boolean = false;
 
-  filename1=''
-  filename2=''
+  filename1 = ''
+  filename2 = ''
 
-  constructor(private apiService: ApiService, private dialog: MatDialog,private _snackBar: MatSnackBar) {
-   }
+  constructor(private apiService: ApiService, private dialog: MatDialog, private _snackBar: MatSnackBar) {
+  }
 
   ngOnInit(): void {
-    let body = {"Selected Columns": {"list1":["SKU Description"], "list2":["SUBCLASS_NAME"]}}
+    let body = { "Selected Columns": { "list1": ["SKU Description"], "list2": ["SUBCLASS_NAME"] } }
     this.apiService.sendColumnNames(body).subscribe({
-      next: (res:any)=> {
-        console.log("Yes",res);
+      next: (res: any) => {
+        console.log("Yes", res);
 
       }
     })
@@ -49,7 +49,7 @@ export class FileUploadComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.width = '40vw';
     dialogConfig.panelClass = 'no-backdrop-dialog';
-
+    
     this.dialog.open(MatModal1Component, dialogConfig);
   }
 
@@ -68,7 +68,7 @@ export class FileUploadComponent implements OnInit {
     const formData = new FormData();
     const fileField = this.inputFile1.nativeElement
 
-    console.log("TEST",fileField.files[0].name);
+    console.log("TEST", fileField.files[0].name);
 
 
     formData.append("filename", fileField.files[0]);
@@ -78,6 +78,7 @@ export class FileUploadComponent implements OnInit {
         console.log(data);
         this.success1 = true;
         this.filename1 = fileField.files[0].name
+        localStorage.setItem('uploadfilename1', this.filename1)
         this.openSnackBar(`${fileField.files[0].name} Uploaded Successfully`, 'x')
       },
       error: (error: any) => {
@@ -100,7 +101,9 @@ export class FileUploadComponent implements OnInit {
       next: (data: any) => {
         console.log(data);
         this.success2 = true;
-        this.filename1 = fileField.files[0].name
+        this.filename2 = fileField.files[0].name
+        localStorage.setItem('uploadfilename2', this.filename2)
+
         this.openSnackBar(`${fileField.files[0].name} Uploaded Successfully`, 'x')
 
       }

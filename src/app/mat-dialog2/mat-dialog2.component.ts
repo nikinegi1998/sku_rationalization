@@ -24,6 +24,9 @@ export class MatDialog2Component implements OnInit {
   selectedColumn1: any;
   selectedColumn2: any;
 
+  filename1
+  filename2
+
   indexNumber: number = 0;
 
 
@@ -41,7 +44,12 @@ export class MatDialog2Component implements OnInit {
 
 
   getTableData() {
-    let body = {}
+    this.filename1 = localStorage.getItem('uploadfilename1')
+    this.filename2 = localStorage.getItem('uploadfilename2')
+    let body = {
+      "filename1": this.filename1,
+      "filename2": this.filename2
+    }
     this.apiService.getRetailTableData(body).subscribe({
       next: (res: any) => {
         this.list1 = JSON.parse(res["List 1"]);
@@ -73,6 +81,8 @@ export class MatDialog2Component implements OnInit {
   sendColumn() {
 
     let body = {
+      "filename1": this.filename1,
+      "filename2": this.filename2,
       "Selected Columns": { "list1": [this.selectedColumn1], "list2": [this.selectedColumn2] }
     }
     console.log(body);
