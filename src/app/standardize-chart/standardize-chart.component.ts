@@ -42,31 +42,29 @@ export class StandardizeChartComponent implements OnInit {
 
   testClick(event: any) {
 
-
-
     // console.log(this.data[keyName].Both[value]);
 
-    if(event.target.checked == true){
+    if (event.target.checked == true) {
       console.log("Event", event.target.getAttribute('value'), event.target);
-      console.log(event.target,"CJECJKEF");
+      console.log(event.target, "CJECJKEF");
       let id = event.target.id
-    id = id.split("-")
-    console.log(id);
+      id = id.split("-")
+      console.log(id);
 
-    let keyName = id[1]
+      let keyName = id[1]
 
-    let value = event.target.getAttribute('value')
-    let name = event.target.getAttribute('name')
-
-
-    this.data[keyName].Both[name] = value
-
-    console.log(this.data[keyName]);
+      let value = event.target.getAttribute('value')
+      let name = event.target.getAttribute('name')
 
 
-    // document.getElementById(event.target.id).style.color = "green";
+      this.data[keyName].Both[name] = value
 
-    localStorage.setItem("colummRes", JSON.stringify(this.data))
+      console.log(this.data[keyName]);
+
+
+      // document.getElementById(event.target.id).style.color = "green";
+
+      localStorage.setItem("colummRes", JSON.stringify(this.data))
 
     }
 

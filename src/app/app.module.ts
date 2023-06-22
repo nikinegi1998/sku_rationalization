@@ -40,6 +40,7 @@ import { MatDialog3Component } from './mat-dialog3/mat-dialog3.component';
 import { ItemClassificationComponent } from './item-classification/item-classification.component';
 import { FinalListComponent } from './final-list/final-list.component';
 import { MatModalFinalComponent } from './mat-modal-final/mat-modal-final.component';
+import { ConsolidationComponent } from './consolidation/consolidation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +58,7 @@ import { MatModalFinalComponent } from './mat-modal-final/mat-modal-final.compon
     ItemClassificationComponent,
     FinalListComponent,
     MatModalFinalComponent,
+    ConsolidationComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,7 @@ import { DuplicityItemsB2Component } from './duplicity-items-b2/duplicity-items-
 import { DuplicityAcrossComponent } from './duplicity-across/duplicity-across.component';
 import { ItemClassificationComponent } from './item-classification/item-classification.component';
 import { FinalListComponent } from './final-list/final-list.component';
+import { ConsolidationComponent } from './consolidation/consolidation.component';
 
 const routes: Routes = [
   {
@@ -15,27 +16,31 @@ const routes: Routes = [
   },
   {
     path: "standardizeChart",
-    component:StandardizeChartComponent
+    component: StandardizeChartComponent
   },
   {
     path: "duplicitItemsB1",
-    component:DuplicityItemB1Component
+    component: DuplicityItemB1Component
   },
   {
     path: "duplicitItemsB2",
-    component:DuplicityItemsB2Component
+    component: DuplicityItemsB2Component
   },
   {
     path: "duplicitAcross",
-    component:DuplicityAcrossComponent
+    component: DuplicityAcrossComponent
   },
   {
     path: "itemClassification",
-    component:ItemClassificationComponent
+    component: ItemClassificationComponent
   },
   {
     path: "finalList",
-    component:FinalListComponent
+    component: FinalListComponent
+  },
+  {
+    path: "consolidate",
+    component: ConsolidationComponent
   },
   {
     path: "**",
