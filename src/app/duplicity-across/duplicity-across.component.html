@@ -89,6 +89,8 @@
     <div
       class="card p-3 me-3 mb-3 border w-25"
       *ngFor="let dt of Items_Duplicity_Across"
+      role="button"
+      (click)="onGridValSelect(dt['Class Description'])"
     >
       <div class="d-flex flex-tow">
         <h5 style="color: #3f7eff; font-size: 43h">

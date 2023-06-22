@@ -1,0 +1,102 @@
+<div class="m-3">
+  <div class="mt-2">
+    <div class="">
+      <table class="table mb-0">
+        <thead style="font-size: 2.1vh !important">
+          <tr>
+            <th scope="col" style="background-color: #eeeff1">
+              Class Description
+            </th>
+            <th
+              *ngIf="!skuNameOrDesc"
+              scope="col"
+              style="background-color: #eeeff1"
+            >
+              SKU Description
+            </th>
+            <th
+              *ngIf="skuNameOrDesc"
+              scope="col"
+              style="background-color: #eeeff1"
+            >
+              SKU name
+            </th>
+            <th scope="col" style="background-color: #eeeff1">Similarity</th>
+            <th scope="col" style="background-color: #eeeff1">Survived</th>
+          </tr>
+        </thead>
+        <tbody
+          style="font-size: 1.9vh !important"
+          *ngFor="
+            let data2 of gridData
+              | paginate
+                : { itemsPerPage: 7, currentPage: paginator.pageIndex + 1 };
+            index as i
+          "
+        >
+          <tr>
+            <td>{{ data2['Class Description'] }}</td>
+            <td *ngIf="!skuNameOrDesc">
+              {{ data2['SKU Description'] }}
+            </td>
+            <td *ngIf="skuNameOrDesc">{{ data2['SKU_NAME'] }}</td>
+            <td>{{ isFloat(data2['Similarity']) }}</td>
+            <td>
+              <div
+                class="dropdown"
+                [attr.id]="'dynamicId' + i"
+                style="font-size: 1.9vh !important"
+              >
+                <button
+                  style="font-size: 1.9vh !important; width: 5vw !important"
+                  class="btn btn-light border border-secondary dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  {{ data2['Survived'] == 'Y' ? 'Yes' : 'No' }}
+                </button>
+                <ul
+                  class="dropdown-menu"
+                  (click)="updateDropdown($event, data2['list1_primary_key'])"
+                >
+                  <li>
+                    <a class="dropdown-item" style="font-size: 1.9vh !important"
+                      >Yes</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" style="font-size: 1.9vh !important"
+                      >No</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <mat-paginator
+        class="mt-0 mb-1"
+        #paginator
+        showFirstLastButtons
+        [length]="dataSource?.data.length"
+        [pageSize]="7"
+        [pageIndex]="0"
+      >
+      </mat-paginator>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-end mt-2 mb-5 sticky-bottom mb-auto">
+    <button
+      mat-raised-button
+      color="primary"
+      class="mb-5 mt-1"
+      (click)="navigateBack()"
+    >
+      Back to List View
+    </button>
+  </div>
+</div>

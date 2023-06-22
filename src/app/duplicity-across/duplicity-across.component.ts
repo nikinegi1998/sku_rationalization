@@ -7,6 +7,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatModalFinalComponent } from '../mat-modal-final/mat-modal-final.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-duplicity-across',
@@ -15,7 +16,7 @@ import { MatModalFinalComponent } from '../mat-modal-final/mat-modal-final.compo
 })
 export class DuplicityAcrossComponent implements OnInit {
 
-  constructor(private dialog: MatDialog, private apiService: ApiService) { }
+  constructor(private dialog: MatDialog, private apiService: ApiService, private router: Router) { }
   ngOnInit(): void {
     this.getChartData()
   }
@@ -95,6 +96,28 @@ export class DuplicityAcrossComponent implements OnInit {
       return number
     }
 
+  }
+
+  onGridValSelect(data) {
+    let gridData = []
+
+    console.log("card selected data", data);
+    for (const key in this.Duplicity_Across) {
+
+      const element = this.Duplicity_Across[key];
+      // console.log(element);
+      if (element['Class Description'] === data) {
+        gridData.push(element)
+      }
+    }
+    console.log(gridData);
+
+
+    this.router.navigate(['/gridView'], {
+      state: {
+        navigate: "duplicitAcross", gridData
+      }
+    })
   }
 
 }

@@ -8,6 +8,7 @@ import { DuplicityAcrossComponent } from './duplicity-across/duplicity-across.co
 import { ItemClassificationComponent } from './item-classification/item-classification.component';
 import { FinalListComponent } from './final-list/final-list.component';
 import { ConsolidationComponent } from './consolidation/consolidation.component';
+import { GridViewComponent } from './grid-view/grid-view.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: "consolidate",
     component: ConsolidationComponent
+  },
+  {
+    path: "gridView",
+    component: GridViewComponent
   },
   {
     path: "**",

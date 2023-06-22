@@ -1,115 +1,234 @@
 <div class="m-3">
   <div class="d-flex flex-row justify-content-between">
-    <h3 class="" style="font-weight: 595;" *ngIf="clickedGrid">Items With Duplicity (Within Banner 1)</h3>
-    <h3 class="" style="font-weight: 595;" *ngIf="clickedList"> Duplicity Within (Brand 1)</h3>
+    <h3 class="" style="font-weight: 595" *ngIf="clickedGrid">
+      Items With Duplicity (Within Banner 1)
+    </h3>
+    <h3 class="" style="font-weight: 595" *ngIf="clickedList">
+      Duplicity Within (Brand 1)
+    </h3>
     <div>
-      <i class="bi bi-list-ul p-2 " *ngIf="!clickedList" style="cursor: pointer;color: black;background-color: #FFFFFF  ;" (click) = "onClickList()" >
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-list-ul" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+      <i
+        class="bi bi-list-ul p-2"
+        *ngIf="!clickedList"
+        style="cursor: pointer; color: black; background-color: #ffffff"
+        (click)="onClickList()"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="currentColor"
+          class="bi bi-list-ul"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
+          />
         </svg>
       </i>
-      <i class="bi bi-list-ul p-1 "  *ngIf="clickedList" style="cursor: pointer;color: white;background-color: #3F7EFF  ;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-list-ul" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+      <i
+        class="bi bi-list-ul p-1"
+        *ngIf="clickedList"
+        style="cursor: pointer; color: white; background-color: #3f7eff"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="currentColor"
+          class="bi bi-list-ul"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
+          />
         </svg>
       </i>
 
-        <svg id="Card_view_28px" *ngIf="clickedGrid" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 28 28" style="background-color: #3F7EFF;cursor:pointer">
-          <rect id="Rectangle_549" data-name="Rectangle 549" width="24" height="24" fill="none" opacity="0.31"/>
-          <path id="Icon_material-dashboard" data-name="Icon material-dashboard" d="M4.5,14.312h7.85V4.5H4.5Zm0,7.85h7.85V16.275H4.5Zm9.812,0h7.85V12.35h-7.85Zm0-17.662v5.887h7.85V4.5Z" transform="translate(0.5 0.5)" fill="#fff"/>
-        </svg>
+      <svg
+        id="Card_view_28px"
+        *ngIf="clickedGrid"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 28 28"
+        style="background-color: #3f7eff; cursor: pointer"
+      >
+        <rect
+          id="Rectangle_549"
+          data-name="Rectangle 549"
+          width="24"
+          height="24"
+          fill="none"
+          opacity="0.31"
+        />
+        <path
+          id="Icon_material-dashboard"
+          data-name="Icon material-dashboard"
+          d="M4.5,14.312h7.85V4.5H4.5Zm0,7.85h7.85V16.275H4.5Zm9.812,0h7.85V12.35h-7.85Zm0-17.662v5.887h7.85V4.5Z"
+          transform="translate(0.5 0.5)"
+          fill="#fff"
+        />
+      </svg>
 
-      <img src="../../assets/Card_view_28px (1).svg" *ngIf="!clickedGrid" alt="" style="cursor: pointer;color: black;background-color: #FFFFFF" (click) = "onClickGrid()">
-
+      <img
+        src="../../assets/Card_view_28px (1).svg"
+        *ngIf="!clickedGrid"
+        alt=""
+        style="cursor: pointer; color: black; background-color: #ffffff"
+        (click)="onClickGrid()"
+      />
     </div>
   </div>
-<!-- <p class="" style="color: #969EA3;display: inline-block;">You Can Select From the Suggested or Can Custom</p> -->
+  <!-- <p class="" style="color: #969EA3;display: inline-block;">You Can Select From the Suggested or Can Custom</p> -->
 
-<div class="cards mt-2" *ngIf="clickedGrid">
-
-
-  <div class="card p-3 me-3 mb-3  border" *ngFor="let data of duplicitBannerData" style="width: 25%;" >
-    <div class="d-flex flex-tow">
-      <h5 style="color: #3F7EFF;font-size: 43h;">{{data["Class Description"]}}</h5>
-      <!-- <span class="ms-auto">
+  <div class="cards mt-2" *ngIf="clickedGrid">
+    <div
+      class="card p-3 me-3 mb-3 border w-25"
+      *ngFor="let data of duplicitBannerData"
+      role="button"
+      (click)="onGridValSelect(data['Class Description'])"
+    >
+      <div class="d-flex flex-tow">
+        <h5 style="color: #3f7eff; font-size: 43h">
+          {{ data['Class Description'] }}
+        </h5>
+        <!-- <span class="ms-auto">
 
         <div class="card px-2  ms-3 rounded-pill" style="color: #7672ED;background-color: #EDEDFD;border-color: #DCDBFA;">Beverages</div>
       </span> -->
+      </div>
 
+      <div
+        class="card mt-2 d-flex flex-row justify-content-between px-2 py-1 border border-0"
+        style="font-weight: 590; font-size: 0.9rem; background-color: #f6f7fb"
+      >
+        <span> Suspect Groups </span>
+        <span class="">
+          {{ data['Suspect Group'] }}
+        </span>
+      </div>
+
+      <div
+        class="card mt-2 d-flex flex-row justify-content-between px-2 py-1 border border-0"
+        style="font-weight: 590; font-size: 0.9rem; background-color: #f6f7fb"
+      >
+        <span> Suspects </span>
+        <span class="">
+          {{ data['Suspects'] }}
+        </span>
+      </div>
     </div>
-
-    <div class="card mt-2 d-flex flex-row justify-content-between px-2 py-1 border border-0" style="font-weight: 590;font-size: 0.9rem;background-color: #F6F7FB;">
-      <span>
-        Suspect Groups
-      </span>
-      <span class="">
-
-        {{data["Suspect Group"]}}
-      </span>
-    </div>
-
-    <div class="card mt-2 d-flex flex-row justify-content-between px-2 py-1 border border-0" style="font-weight: 590;font-size: 0.9rem;background-color: #F6F7FB;">
-      <span>
-        Suspects
-      </span>
-      <span class="">
-
-        {{data["Suspects"]}}
-      </span>
-    </div>
-
-  </div>
-</div>
-
-<div *ngIf="clickedList" class="mt-2">
-
-  <div class="">
-    <table class="table mb-0">
-      <thead style="font-size: 2.1vh!important;">
-        <tr>
-          <th scope="col" style="background-color: #EEEFF1;">Class Description</th>
-          <th scope="col" style="background-color: #EEEFF1;">SKU Description</th>
-          <th scope="col" style="background-color: #EEEFF1;">Similarity</th>
-          <th scope="col" style="background-color: #EEEFF1;">Survived</th>
-        </tr>
-      </thead>
-      <tbody style="font-size: 1.9vh!important;" *ngFor="let data2 of dataSource.data | paginate: { itemsPerPage: 7, currentPage: paginator.pageIndex + 1 };index as i">
-        <tr>
-          <td>{{ data2['Class Description'] }}</td>
-          <td>{{ data2['SKU Description'] }}</td>
-          <td>{{  isFloat(data2['Similarity'] ) }}</td>
-          <td>
-            <div class="dropdown"  [attr.id] = "'dynamicId'+i" style="font-size: 1.9vh!important;">
-              <button style="font-size: 1.9vh!important;width: 5vw!important;" class="btn btn-light border border-secondary  dropdown-toggle"  type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                {{ data2['Survived'] == 'Y'?'Yes':'No' }}
-              </button>
-              <ul class="dropdown-menu" (click)="updateDropdown($event, data2['list1_primary_key'])" >
-                <li><a class="dropdown-item" style="font-size: 1.9vh!important;">Yes</a></li>
-                <li><a class="dropdown-item" style="font-size: 1.9vh!important;">No</a></li>
-              </ul>
-            </div>
-
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <mat-paginator class="mt-0 mb-1" #paginator showFirstLastButtons
-          [length]="dataSource?.data.length" [pageSize]="7" [pageIndex]="0">
-        </mat-paginator>
-
   </div>
 
-  <!-- <div class="pagination d-flex flex-row  justify-content-between me-5">
+  <div *ngIf="clickedList" class="mt-2">
+    <div class="">
+      <table class="table mb-0">
+        <thead style="font-size: 2.1vh !important">
+          <tr>
+            <th scope="col" style="background-color: #eeeff1">
+              Class Description
+            </th>
+            <th scope="col" style="background-color: #eeeff1">
+              SKU Description
+            </th>
+            <th scope="col" style="background-color: #eeeff1">Similarity</th>
+            <th scope="col" style="background-color: #eeeff1">Survived</th>
+          </tr>
+        </thead>
+        <tbody
+          style="font-size: 1.9vh !important"
+          *ngFor="
+            let data2 of dataSource.data
+              | paginate
+                : { itemsPerPage: 7, currentPage: paginator.pageIndex + 1 };
+            index as i
+          "
+        >
+          <tr>
+            <td>{{ data2['Class Description'] }}</td>
+            <td>{{ data2['SKU Description'] }}</td>
+            <td>{{ isFloat(data2['Similarity']) }}</td>
+            <td>
+              <div
+                class="dropdown"
+                [attr.id]="'dynamicId' + i"
+                style="font-size: 1.9vh !important"
+              >
+                <button
+                  style="font-size: 1.9vh !important; width: 5vw !important"
+                  class="btn btn-light border border-secondary dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  {{ data2['Survived'] == 'Y' ? 'Yes' : 'No' }}
+                </button>
+                <ul
+                  class="dropdown-menu"
+                  (click)="updateDropdown($event, data2['list1_primary_key'])"
+                >
+                  <li>
+                    <a class="dropdown-item" style="font-size: 1.9vh !important"
+                      >Yes</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" style="font-size: 1.9vh !important"
+                      >No</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <mat-paginator
+        class="mt-0 mb-1"
+        #paginator
+        showFirstLastButtons
+        [length]="dataSource?.data.length"
+        [pageSize]="7"
+        [pageIndex]="0"
+      >
+      </mat-paginator>
+    </div>
+
+    <!-- <div class="pagination d-flex flex-row  justify-content-between me-5">
     <pagination-controls id="first" class=" mx-auto" (pageChange)="p = $event"></pagination-controls>
 
     </div> -->
-</div>
-<div class="d-flex justify-content-end  mt-2 mb-5 sticky-bottom mb-auto " *ngIf="clickedList"> <button  mat-raised-button color="primary"  class="mb-5 mt-1" routerLink="/duplicitItemsB2" >Continue</button></div>
-<div class="d-flex justify-content-end m-3 mt-2 mb-5 fixed-bottom mb-auto " *ngIf="clickedGrid"> <button  mat-raised-button color="primary"  class="mb-5 mt-2" routerLink="/duplicitItemsB2" >Continue</button></div>
+  </div>
+  <div
+    class="d-flex justify-content-end mt-2 mb-5 sticky-bottom mb-auto"
+    *ngIf="clickedList"
+  >
+    <button
+      mat-raised-button
+      color="primary"
+      class="mb-5 mt-1"
+      routerLink="/duplicitItemsB2"
+    >
+      Continue
+    </button>
+  </div>
+  <div
+    class="d-flex justify-content-end m-3 mt-2 mb-5 fixed-bottom mb-auto"
+    *ngIf="clickedGrid"
+  >
+    <button
+      mat-raised-button
+      color="primary"
+      class="mb-5 mt-2"
+      routerLink="/duplicitItemsB2"
+    >
+      Continue
+    </button>
+  </div>
 
-<div class="card border bg-transparent border-0 p-4">
-
-</div>
-
+  <div class="card border bg-transparent border-0 p-4"></div>
 </div>

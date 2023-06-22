@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-duplicity-item-b1',
@@ -17,27 +18,27 @@ export class DuplicityItemB1Component implements OnInit {
   @ViewChild("paginator") paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  clickedList:boolean = true;
-  clickedGrid:boolean = false;
+  clickedList: boolean = true;
+  clickedGrid: boolean = false;
 
-  duplicitBannerData:any[] = [];
-  duplicitWithBrand1:any[] = [];
+  duplicitBannerData: any[] = [];
+  duplicitWithBrand1: any[] = [];
 
 
 
-  p:any;
+  p: any;
 
-  constructor(){
+  constructor(private router: Router) {
     this.getDuplicitBannerData()
 
   }
 
-  onClickList(){
+  onClickList() {
     this.clickedList = true;
     this.clickedGrid = false;
   }
 
-  onClickGrid(){
+  onClickGrid() {
     this.clickedList = false;
     this.clickedGrid = true;
   }
@@ -47,13 +48,13 @@ export class DuplicityItemB1Component implements OnInit {
   ngOnInit(): void {
   }
 
-  getDuplicitBannerData(){
+  getDuplicitBannerData() {
     let data = JSON.parse(localStorage.getItem("colummAllDataRes"));
     this.duplicitBannerData = JSON.parse(data.Items_Duplicity_within_banner1)
-    console.log(data);
+    console.log("duplicitBannerData", data);
 
     this.duplicitWithBrand1 = JSON.parse(data.Duplicity_Within_Brand1)
-    console.log(this.duplicitWithBrand1);
+    console.log("duplicitWithBrand1", this.duplicitWithBrand1);
 
     this.dataSource = new MatTableDataSource<any>(this.duplicitWithBrand1);
 
@@ -67,11 +68,11 @@ export class DuplicityItemB1Component implements OnInit {
   }
 
 
-  updateDropdown(event:any, id:any){
+  updateDropdown(event: any, id: any) {
     console.log(event.target.textContent);
-    for(let i of this.dataSource.data){
-      if(i["list1_primary_key"]  == id){
-        i['Survived'] = (event.target.textContent == 'Yes'?'Y':'N');
+    for (let i of this.dataSource.data) {
+      if (i["list1_primary_key"] == id) {
+        i['Survived'] = (event.target.textContent == 'Yes' ? 'Y' : 'N');
         console.log(i['Survived'])
       }
     }
@@ -79,17 +80,39 @@ export class DuplicityItemB1Component implements OnInit {
 
   }
 
-  isFloat(number:any){
-    if(number !== Math.floor(number) ){
+  isFloat(number: any) {
+    if (number !== Math.floor(number)) {
       return number.toFixed(3);
     }
-    if(number == 1){
+    if (number == 1) {
       return "0.990"
     }
-    else{
+    else {
       return number
     }
 
+  }
+
+  onGridValSelect(data) {
+    let gridData = []
+
+    console.log("card selected data", data);
+    for (const key in this.duplicitWithBrand1) {
+
+      const element = this.duplicitWithBrand1[key];
+      // console.log(element);
+      if (element['Class Description'] === data) {
+        gridData.push(element)
+      }
+    }
+    console.log(gridData);
+
+
+    this.router.navigate(['/gridView'], {
+      state: {
+        navigate: "duplicitItemsB1", gridData
+      }
+    })
   }
 
 

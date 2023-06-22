@@ -4,6 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from '../_Services/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-final-list',
@@ -14,12 +15,17 @@ export class FinalListComponent implements OnInit {
 
   Final_List: any[] = []
   STD_rule: any
+  dataSource: MatTableDataSource<any>
 
-  dataSource: MatTableDataSource<any>;
+  displayedColumns: string[] = ['Class Description', 'Old SKU Description', 'New SKU Description'];
+
+  selectedColumn = ''
+
+  dataSource1: MatTableDataSource<any>;
   // Define the MatPaginator and MatSort
   @ViewChild("paginator") paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  constructor(private dialog: MatDialog, private apiService: ApiService) { }
+  constructor(private dialog: MatDialog, private apiService: ApiService, private router: Router) { }
   ngOnInit(): void {
     this.getChartData()
   }
@@ -60,6 +66,17 @@ export class FinalListComponent implements OnInit {
 
 
   }
+  onChipOptionClick(data: any) {
+    console.log("cLICKED", data);
+    this.selectedColumn = data;
+  }
 
+  columnSelect(col_name) {
+    console.log("col_name", col_name);
+    
+  }
 
+  navigateToConsolidate() {
+    this.router.navigate(["/consolidate"], { state: {} })
+  }
 }

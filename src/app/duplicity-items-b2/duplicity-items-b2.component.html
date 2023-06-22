@@ -87,9 +87,10 @@
 
   <div class="cards mt-2" *ngIf="clickedGrid">
     <div
-      class="card p-3 me-3 mb-3 border"
+      class="card p-3 me-3 mb-3 border w-25"
       *ngFor="let data of duplicitBannerData"
-      style="width: 25%"
+      role="button"
+      (click)="onGridValSelect(data['Class Description'])"
     >
       <div class="d-flex flex-row">
         <h5 style="color: #3f7eff; font-size: 43h">

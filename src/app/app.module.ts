@@ -41,6 +41,7 @@ import { ItemClassificationComponent } from './item-classification/item-classifi
 import { FinalListComponent } from './final-list/final-list.component';
 import { MatModalFinalComponent } from './mat-modal-final/mat-modal-final.component';
 import { ConsolidationComponent } from './consolidation/consolidation.component';
+import { GridViewComponent } from './grid-view/grid-view.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +60,7 @@ import { ConsolidationComponent } from './consolidation/consolidation.component'
     FinalListComponent,
     MatModalFinalComponent,
     ConsolidationComponent,
+    GridViewComponent,
   ],
   imports: [
     BrowserModule,

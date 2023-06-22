@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-duplicity-items-b2',
@@ -27,7 +28,7 @@ export class DuplicityItemsB2Component {
 
   p:any;
 
-  constructor(){
+  constructor(private router : Router){
     this.getDuplicitBannerData()
 
   }
@@ -90,5 +91,27 @@ export class DuplicityItemsB2Component {
       return number
     }
 
+  }
+
+  onGridValSelect(data) {
+    let gridData = []
+
+    console.log("card selected data", data);
+    for (const key in this.duplicitWithBrand2) {
+
+      const element = this.duplicitWithBrand2[key];
+      // console.log(element);
+      if (element['Class Description'] === data) {
+        gridData.push(element)
+      }
+    }
+    console.log(gridData);
+
+
+    this.router.navigate(['/gridView'], {
+      state: {
+        navigate: "duplicitItemsB2", gridData
+      }
+    })
   }
 }
