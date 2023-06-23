@@ -73,10 +73,15 @@ export class FinalListComponent implements OnInit {
 
   columnSelect(col_name) {
     console.log("col_name", col_name);
-    
+    this.selectedColumn = col_name
   }
 
   navigateToConsolidate() {
-    this.router.navigate(["/consolidate"], { state: {} })
+    if (this.selectedColumn !== '')
+      this.router.navigate(["/consolidate"], { state: { col_name: this.selectedColumn } })
+
+    else
+      console.log("select a column first");
+
   }
 }

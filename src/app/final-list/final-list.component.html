@@ -36,24 +36,60 @@
           <tr>
             <th
               role="button"
-              (click)="columnSelect('Class Description')"
               style="background-color: #eeeff1"
+              (click)="columnSelect('Class Description')"
             >
-              Class Description
+              <span
+                class="p-2"
+                [ngStyle]="{
+                  'background-color':
+                    selectedColumn === 'Class Description'
+                      ? '#777777'
+                      : '#eeeff1',
+                  'border-radius':
+                    selectedColumn === 'Class Description' ? '25px' : '0'
+                }"
+              >
+                Class Description
+              </span>
             </th>
             <th
               role="button"
-              (click)="columnSelect('Old SKU Description')"
               style="background-color: #eeeff1"
+              (click)="columnSelect('Old SKU Description')"
             >
-              Old SKU Description
+              <span
+                class="p-2"
+                [ngStyle]="{
+                  'background-color':
+                    selectedColumn === 'Old SKU Description'
+                      ? '#777777'
+                      : '#eeeff1',
+                  'border-radius':
+                    selectedColumn === 'Old SKU Description' ? '25px' : '0'
+                }"
+              >
+                Old SKU Description</span
+              >
             </th>
             <th
               role="button"
               (click)="columnSelect('New SKU Description')"
               style="background-color: #eeeff1"
             >
-              New SKU Description
+              <span
+                class="p-2"
+                [ngStyle]="{
+                  'background-color':
+                    selectedColumn === 'New SKU Description'
+                      ? '#777777'
+                      : '#eeeff1',
+                  'border-radius':
+                    selectedColumn === 'New SKU Description' ? '25px' : '0'
+                }"
+              >
+                New SKU Description</span
+              >
             </th>
           </tr>
         </thead>
@@ -165,7 +201,7 @@
     </div>
   </div>
 
-  <!-- <div class="d-flex justify-content-end m-3 mt-5 fixed-bottom mb-auto">
+  <div class="d-flex justify-content-end m-3 mt-5 fixed-bottom mb-auto">
     <button
       (click)="navigateToConsolidate()"
       mat-raised-button
@@ -174,5 +210,5 @@
     >
       Consolidate
     </button>
-  </div> -->
+  </div>
 </div>
