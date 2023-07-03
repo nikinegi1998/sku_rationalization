@@ -18,7 +18,7 @@ export class ConsolidationComponent implements OnInit {
 
   selectedClasses: any = []
   colName
-  inputVal = 5
+  inputVal = 3
 
   consolidateBtnFlag = true
 
@@ -36,6 +36,7 @@ export class ConsolidationComponent implements OnInit {
         this.selectedClasses = res.unique_vals
         console.log(this.selectedClasses, "selectedClasses");
 
+        this.inputVal = Math.round(this.selectedClasses.length / 5)
 
 
       }
