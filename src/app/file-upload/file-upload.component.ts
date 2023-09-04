@@ -66,7 +66,7 @@ export class FileUploadComponent implements OnInit {
     const fileField = this.inputFile1.nativeElement
 
     console.log("TEST",fileField.files[0].name);
-
+    sessionStorage.setItem("fileName1",fileField.files[0].name)
 
     formData.append("filename", fileField.files[0]);
 
@@ -91,6 +91,9 @@ export class FileUploadComponent implements OnInit {
 
 
     formData.append("filename", fileField.files[0]);
+
+    sessionStorage.setItem("fileName2",fileField.files[0].name)
+
 
     this.apiService.sendFilesfirstPage(formData).subscribe({
       next: (data: any) => {
