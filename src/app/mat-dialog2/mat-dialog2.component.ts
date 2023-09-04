@@ -15,8 +15,10 @@ export class MatDialog2Component implements OnInit {
   @ViewChild('paginator2') paginator2: MatPaginator;
 
 
-  displayedColumns1: string[] = ['Class Description', 'Sub Department Description', 'Sub Class Description', 'SKU Description', 'SKU Id'];
-  displayedColumns2: string[] = ['DIVISION_NAME', 'DEPT_NAME', "CLASS_NAME", "SUBCLASS_NAME", 'SKU Type', 'SKU_NAME', 'SKU_ID'];
+  displayedColumns1: any[] 
+  // = ['Class Description', 'Sub Department Description', 'Sub Class Description', 'SKU Description', 'SKU Id'];
+  displayedColumns2: any[]
+  //  = ['DIVISION_NAME', 'DEPT_NAME', "CLASS_NAME", "SUBCLASS_NAME", 'SKU Type', 'SKU_NAME', 'SKU_ID'];
 
   dataSource1: MatTableDataSource<any>
   dataSource2: MatTableDataSource<any>
@@ -55,9 +57,16 @@ export class MatDialog2Component implements OnInit {
         this.list1 = JSON.parse(res["List 1"]);
         this.list2 = JSON.parse(res["List 2"]);
         console.log(this.list1, this.list2);
+        this.displayedColumns1 = Object.keys(this.list1[0]).length < 9 ? Object.keys(this.list1[0]) : Object.keys(this.list1[0]).slice(0, 8)
+
         this.dataSource1 = new MatTableDataSource<any>(this.list1);
+
         this.dataSource1.paginator = this.paginator1;
+
+        this.displayedColumns2 = Object.keys(this.list2[0]).length < 9 ? Object.keys(this.list2[0]) : Object.keys(this.list2[0]).slice(0, 8)
+
         this.dataSource2 = new MatTableDataSource<any>(this.list2);
+
         this.dataSource2.paginator = this.paginator2;
       }
     })

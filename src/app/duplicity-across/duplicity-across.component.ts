@@ -41,7 +41,7 @@ export class DuplicityAcrossComponent implements OnInit {
 
     let vl = JSON.parse(localStorage.getItem("colummAllDataRes"))
     this.Duplicity_Across = JSON.parse(vl.Duplicity_Across)
-    this.Items_Duplicity_Across = JSON.parse(vl.Items_Duplicity_Across)
+    this.Items_Duplicity_Across = JSON.parse(vl.Items_Duplicity_Across).filter((data: any) => { return data["Class Description"] != "" })
 
     console.log(this.Duplicity_Across, "Duplicity_Across");
     console.log(this.Items_Duplicity_Across, "Items_Duplicity_Across");

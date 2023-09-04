@@ -26,7 +26,7 @@ export class GridViewComponent {
     this.navigateUrl = data['navigate']
     console.log(this.gridData, this.navigateUrl);
 
-    if (this.gridData[0]['SKU_NAME']) {
+    if (this.gridData[0]['SKU1']) {
       this.skuNameOrDesc = true
     }
     this.dataSource = new MatTableDataSource<any>(this.gridData);

@@ -50,8 +50,9 @@ export class DuplicityItemB1Component implements OnInit {
 
   getDuplicitBannerData() {
     let data = JSON.parse(localStorage.getItem("colummAllDataRes"));
-    this.duplicitBannerData = JSON.parse(data.Items_Duplicity_within_banner1)
+    this.duplicitBannerData = JSON.parse(data.Items_Duplicity_within_banner1).filter((data: any) => { return data["Class Description"] != "" })
     console.log("duplicitBannerData", data);
+
 
     this.duplicitWithBrand1 = JSON.parse(data.Duplicity_Within_Brand1)
     console.log("duplicitWithBrand1", this.duplicitWithBrand1);
