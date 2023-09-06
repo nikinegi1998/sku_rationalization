@@ -106,7 +106,7 @@
 
           ">
 
-          <tr>
+          <tr *ngIf="data2['Survived']">
 
             <td>{{ data2['Class Description'] }}</td>
 
@@ -146,6 +146,14 @@
 
             </td>
 
+          </tr>
+
+          
+          <tr *ngIf="!data2['Survived']">
+            <td style="background-color: #000"></td>
+            <td style="background-color: #000"></td>
+            <td style="background-color: #000"></td>
+            <td style="background-color: #000"></td>
           </tr>
 
         </tbody>

@@ -91,10 +91,13 @@ export class MatDialog2Component implements OnInit {
 
     let body = {
       "filename1": this.filename1,
-      "filename2": this.filename2,
+      "filename2": this.filename2  ,
       "Selected Columns": { "list1": [this.selectedColumn1], "list2": [this.selectedColumn2] }
     }
-    console.log(body);
+
+    localStorage.setItem("original_selected_col", JSON.stringify(body['Selected Columns']))
+
+    console.log("body===", body);
 
     localStorage.setItem('col_payload', JSON.stringify(body))
     this.apiService.sendColumnNames(body).subscribe({

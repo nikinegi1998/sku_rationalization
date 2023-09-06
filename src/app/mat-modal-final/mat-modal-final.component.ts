@@ -17,12 +17,19 @@ export class MatModalFinalComponent {
   closedialgBox = false
   colA = ''
   colB = ''
+  filename1: string;
+  filename2: string;
   constructor(private dialog: MatDialog, private router: Router, private apiService: ApiService) { }
 
 
   getdropdown() {
 
-    this.apiService.updateClassification({}).subscribe(res => {
+    this.filename1 = localStorage.getItem('uploadfilename1')
+    this.filename2 = localStorage.getItem('uploadfilename2')
+    this.apiService.updateClassification({
+      "filename1": this.filename1,
+      "filename2": this.filename2
+    }).subscribe(res => {
       this.dropdown = res
       console.log(this.dropdown, "dropdown");
       this.classificationFlag = true
@@ -31,12 +38,18 @@ export class MatModalFinalComponent {
   }
   updateColClassification() {
     console.log(this.colA, this.colB, "col value");
-    
+
     if (this.colA !== '' || this.colB !== '') {
-      this.apiService.updateClassification({
+      let body = {
         "selected_column1_reclassification": this.colA,
-        "selected_column2_reclassification": this.colB
-      }).subscribe(res => {
+        "selected_column2_reclassification": this.colB,
+        "filename1": this.filename1,
+        "filename2": this.filename2,
+        "Selected Columns": JSON.parse(localStorage.getItem("original_selected_col"))
+      }
+      console.log(body, "body");
+      
+      this.apiService.updateClassification(body).subscribe(res => {
         console.log(res, "res====>");
 
         this.router.navigate(["/itemClassification"], { state: res })

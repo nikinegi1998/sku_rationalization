@@ -1,81 +1,58 @@
-<div class="pb-2 card border border-0" >
-
- 
+<div class="pb-2 card border border-0">
 
   <div class="d-flex justify-content-between mx-3 mt-3">
 
     <h4 class="" style="font-weight: 590;">Column Selection</h4>
 
     <span class="card border border-0">
-
-      <mat-icon mat-dialog-close class="bg-dark rounded-circle ms-auto text-light " style="cursor: pointer;">close</mat-icon>
-
+      <mat-icon mat-dialog-close class="bg-dark rounded-circle ms-auto text-light "
+        style="cursor: pointer;">close</mat-icon>
     </span>
-
   </div>
-
- 
 
   <small class="ms-3 fw-normal" style="color:#969EA3;">Select The Column To Make Sku List Standardize</small>
 
- 
-
-  <mat-tab-group animationDuration="0ms" mat-stretch-tabs="false" mat-align-tabs="start" disableRipple class="m-3" [(selectedIndex)]="indexNumber" >
-
+  <mat-tab-group animationDuration="0ms" mat-stretch-tabs="false" mat-align-tabs="start" disableRipple class="m-3"
+    [(selectedIndex)]="indexNumber">
     <mat-tab label="List 1">
 
- 
-
-      <div class="" >
+      <div class="">
 
         <mat-table [dataSource]="dataSource1">
+          <mat-chip-listbox>
 
-            <mat-chip-listbox>
+            <ng-container *ngFor="let column of displayedColumns1" [matColumnDef]="column">
+              <mat-header-cell *matHeaderCellDef class="p-1" style="font-size: 1vw;">
+                <mat-chip-option style="font-size: 2.1vh!important;font-weight: 590!important;color: black;"
+                  color="accent" class="ms-0 rounded-4 custom-chip-option" (click)="onChipOptionClick1(column)">{{column
+                  | titlecase}}</mat-chip-option>
+              </mat-header-cell>
 
-              <ng-container *ngFor="let column of displayedColumns1" [matColumnDef]="column">
-
-                <mat-header-cell *matHeaderCellDef class="p-1" style="font-size: 1vw;">
-
-                  <mat-chip-option style="font-size: 2.1vh!important;font-weight: 590!important;color: black;" color="accent" class="ms-0 rounded-4 custom-chip-option" (click)="onChipOptionClick1(column)">{{column | titlecase}}</mat-chip-option>
-
-                </mat-header-cell>
-
-                <!-- <th mat-header-cell *matHeaderCellDef  class="p-1">
+              <!-- <th mat-header-cell *matHeaderCellDef  class="p-1">
 
                   <mat-chip-option style="font-size: 2.1vh!important;font-weight: 590!important;color: black;" color="accent" class="ms-0 rounded-4 custom-chip-option" (click)="onChipOptionClick1(column)">{{column | titlecase}}</mat-chip-option>
 
                 </th> -->
 
-                <mat-cell *matCellDef="let element" class="py-0" style="font-size: 0.9vw;">{{ element[column] }}</mat-cell>
+              <mat-cell *matCellDef="let element" class="py-0" style="font-size: 0.9vw;">{{ element[column]
+                }}</mat-cell>
+            </ng-container>
 
-              </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns1"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns1"></mat-row>
+          </mat-chip-listbox>
+        </mat-table>
 
- 
 
-              <mat-header-row *matHeaderRowDef="displayedColumns1"></mat-header-row>
-
-              <mat-row *matRowDef="let row; columns: displayedColumns1"></mat-row>
-
-            </mat-chip-listbox>
-
-          </mat-table>
-
- 
-
-          <mat-paginator #paginator1 [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons class="text-end"
-
-            [length]="dataSource1?.data.length" [pageSize]="5" [pageIndex]="0">
-
-          </mat-paginator>
-
- 
+        <mat-paginator #paginator1 [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons class="text-end"
+          [length]="dataSource1?.data.length" [pageSize]="5" [pageIndex]="0">
+        </mat-paginator>
 
       </div>
 
       <div class="d-flex justify-content-end mt-2">
-
-        <button mat-raised-button color="primary" class="text-end me-4" (click)="changeMatTabIndexNo()">Continue</button>
-
+        <button mat-raised-button color="primary" class="text-end me-4"
+          (click)="changeMatTabIndexNo()">Continue</button>
       </div>
 
     </mat-tab>
@@ -85,17 +62,12 @@
       <div class="">
 
         <mat-table mat-table [dataSource]="dataSource2">
-
- 
-
           <mat-chip-listbox>
-
             <ng-container *ngFor="let column of displayedColumns2" [matColumnDef]="column">
-
               <mat-header-cell *matHeaderCellDef class="p-1" style="font-size: 1vw;">
-
-                <mat-chip-option style="font-size: 2.1vh!important;font-weight: 590!important;color: black;" color="accent" class="ms-0 rounded-4 custom-chip-option" (click)="onChipOptionClick2(column)">{{column | titlecase}}</mat-chip-option>
-
+                <mat-chip-option style="font-size: 2.1vh!important;font-weight: 590!important;color: black;"
+                  color="accent" class="ms-0 rounded-4 custom-chip-option" (click)="onChipOptionClick2(column)">{{column
+                  | titlecase}}</mat-chip-option>
               </mat-header-cell>
 
               <!-- <th mat-header-cell *matHeaderCellDef  class="p-1">
@@ -104,12 +76,9 @@
 
               </th> -->
 
-              <mat-cell *matCellDef="let element" class="py-0" style="font-size: 0.9vw;">{{ element[column] }}</mat-cell>
-
+              <mat-cell *matCellDef="let element" class="py-0" style="font-size: 0.9vw;">{{ element[column]
+                }}</mat-cell>
             </ng-container>
-
- 
-
             <mat-header-row *matHeaderRowDef="displayedColumns2"></mat-header-row>
 
             <mat-row *matRowDef="let row; columns: displayedColumns2"></mat-row>
@@ -118,30 +87,16 @@
 
         </mat-table>
 
- 
-
         <mat-paginator #paginator2 [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons
-
           [length]="dataSource2?.data.length" [pageSize]="5" [pageIndex]="0">
-
         </mat-paginator>
-
       </div>
 
       <div class="d-flex justify-content-end mt-2">
-
- 
-
-        <button mat-raised-button color="primary" class="text-end me-4" mat-dialog-close (click)="sendColumn()">Continue</button>
-
+        <button mat-raised-button color="primary" class="text-end me-4" mat-dialog-close
+          (click)="sendColumn()">Continue</button>
       </div>
 
     </mat-tab>
-
   </mat-tab-group>
-
- 
-
 </div>
-
- 
