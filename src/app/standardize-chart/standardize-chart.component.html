@@ -16,15 +16,16 @@
 <div class="mx-3">
   <div class="card rounded-0 d-flex flex-row justify-content-between p-3"
     style="border-color: #42b977; background-color: #ffffff; font-weight: 590">
-    <span class="my-auto" style="font-size: 1.3em; color: #3f7eff">Our standardization Rule:
+    <span class="my-auto" style="font-size: 1.3em; color: #3f7eff">Item Naming Standardization Rule:
     </span>
     <span *ngFor="let dt of STD_rule" class="mx-2 p-1 my-auto text-center" style="
         border: none;
         outline-color: #42b977;
         outline-style: dashed;
-        outline-offset: 0.1em;
+        outline-offset: 1px;
         color: #42b977;
         width: 8%;
+        font-size: 1.05vw;
       ">{{ dt }}</span>
 
     <span class="mx-2 p-1 my-auto text-center" style="color: #42b977">(All Inticap)</span>
@@ -35,7 +36,7 @@
       Banner
     </th>
     <th class="text-center" style="background-color: #dcdbfa; width: 29.2%">
-      UCOM
+      UOM
     </th>
     <th class="text-center" style="background-color: #dcdbfa; width: 22.6%">
       Pack Type
@@ -87,7 +88,8 @@
     </thead>
     <tbody (click)="testClick($event)">
       <tr style="font-size: 1.8vh !important; font-weight: 580">
-        <td style="background-color: #99e6b2; color: #7672ed">Both</td>
+        <td style="background-color: #99e6b2; color: #7672ed">Recommended</td>
+        <!-- <td style="background-color: #99e6b2; color: #7672ed">Default</td> -->
         <td style="background-color: #99e6b2">
           {{ data.subcat_UOM_dict_Both.Both['Fluid Once'] }}
         </td>

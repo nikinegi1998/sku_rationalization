@@ -1,42 +1,175 @@
-<div class="card  rounded-0" style="min-height: 100%;background-color: #3F7EFF;">
-  <mat-stepper class="bg-transparent mt-5 "  (selectionChange) = "testClick($event)" orientation="vertical" [linear]="false" #stepper
-  style="font-family: 'Poppins', sans-serif!important;">
-  <!-- Define the edit icon, by default is 'create' -->
-  <ng-template matStepperIcon="edit" >
-    <mat-icon>number</mat-icon>
-  </ng-template>
+<!-- File Upload
+Standardization
+Duplicates Within Banner - Group 1 and Group 2
+Duplicates Across Banner
+Classification Correction
+Final Consolidated List
+LLM Assisted Hierarchy consolidation -->
 
-  <!-- Define the number of the step -->
-  <ng-template matStepperIcon="number" let-index="index">
-    {{index+1}}
-  </ng-template>
-  <mat-step [completed]="dashboard" routerLink="/">
-    <!-- <button mat-button matStepperNext>Next</button> -->
-  </mat-step>
-  <mat-step [completed]="standardizeChart"  routerLink="/standardizeChart">
-    <ng-template matStepLabel>
-    </ng-template>
-    <!-- <button mat-button matStepperNext>Next</button>
-    <button mat-button matStepperPrevious>Back</button> -->
-  </mat-step>
-  <mat-step [completed]="duplicitItemsB1" routerLink="/duplicitItemsB1">
-    <!-- <button mat-button matStepperNext>Next</button>
-    <button mat-button matStepperPrevious>Back</button> -->
-  </mat-step>
-  <mat-step [completed]="duplicitItemsB2" routerLink="/duplicitItemsB2">
-    <!-- <button mat-button matStepperPrevious>Back</button> -->
-  </mat-step>
+<div class="card rounded-0" style="min-height: 100%;background-color: #3F7EFF;">
 
-  <mat-step [completed]="duplicitAcross" routerLink="/duplicitAcross">
-    <!-- <button mat-button matStepperPrevious>Back</button> -->
-  </mat-step>
-  <mat-step [completed]="itemClassification" routerLink="/itemClassification">
-    <!-- <button mat-button matStepperPrevious>Back</button> -->
-  </mat-step>
-  <mat-step [completed]="finalList" routerLink="/finalList">
-    <!-- <button mat-button matStepperPrevious>Back</button> -->
-  </mat-step>
-  </mat-stepper>
+  <div class="card rounded-circle mt-5 p-2 mx-1" style="background-color: #2D59B5; border: 1px solid #7EA9FF;" *ngIf="!dashboard">
+    <img src="../../assets/24px_Upload.svg" routerLink="/" matTooltip="File Upload" class="mx-auto" height="27"
+      width="27" alt="" style="cursor: pointer;" *ngIf="!dashboard">
+  </div>
 
+  <div class="card rounded-circle mt-5 p-2 mx-1" style="background-color: #FFFFFF; border: 1px solid #fff;" *ngIf="dashboard">
+    <img src="../../assets/24px_Upload_Current.svg" routerLink="/" matTooltip="File Upload" class="mx-auto " height="27"
+      width="27" alt="" style="cursor: pointer;">
+  </div>
+
+  <div class="mx-auto" style="height: 2vw; border: 2px solid #70A0FF; width: 0px;"></div>
+
+  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #2D59B5; border: 1px solid #7EA9FF;" *ngIf="!standardizeChart">
+    <img src="../../assets/24px_Standard.svg" routerLink="/standardizeChart" matTooltip="Standardization"
+      class="mx-auto" height="27" width="27" alt="" style="cursor: pointer;" *ngIf="!standardizeChart">
+  </div>
+
+  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #FFFFFF; border: 1px solid #fff;" *ngIf="standardizeChart">
+    <img src="../../assets/24px_Standard_Current.svg" routerLink="/standardizeChart" matTooltip="Standardization"
+      class="mx-auto  " height="27" width="27" alt="" style="cursor: pointer;">
+  </div>
+
+  <div class="mx-auto" style="height: 2vw; border: 2px solid #70A0FF; width: 0px;"></div>
+
+  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #2D59B5; border: 1px solid #7EA9FF;" *ngIf="!duplicitItemsB1">
+    <img src="../../assets/24px_Duplicate_within.svg" routerLink="/duplicitItemsB1"
+      matTooltip="Duplicates Within Banner - Group 1 and Group 2" class="mx-auto " height="27" width="27" alt=""
+      style="cursor: pointer;" *ngIf="!duplicitItemsB1">
+  </div>
+
+  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #FFFFFF; border: 1px solid #fff;" *ngIf="duplicitItemsB1">
+    <img src="../../assets/24px_Duplicate_within_Current.svg" routerLink="/duplicitItemsB1"
+      matTooltip="Duplicates Within Banner - Group 1 and Group 2" class="mx-auto  " height="27" width="27" alt=""
+      style="cursor: pointer;">
+  </div>
+
+  <div class="mx-auto" style="height: 2vw; border: 2px solid #70A0FF; width: 0px;"></div>
+
+  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #2D59B5; border: 1px solid #7EA9FF;" *ngIf="!duplicitAcross">
+    <img src="../../assets/24px_Duplicate_across.svg" routerLink="/duplicitAcross" matTooltip="Duplicates Across Banner"
+      class="mx-auto" height="27" width="27" alt="" style="cursor: pointer;" *ngIf="!duplicitAcross">
+  </div>
+
+  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #FFFFFF; border: 1px solid #fff;" *ngIf="duplicitAcross">
+    <img src="../../assets/24px_Duplicate_across_Current.svg" routerLink="/duplicitAcross" class="mx-auto   "
+      matTooltip="Duplicates Across Banner" height="27" width="27" alt="" style="cursor: pointer;">
+  </div>
+
+
+  <div class="mx-auto" style="height: 2vw; border: 2px solid #70A0FF; width: 0px;"></div>
+
+  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #2D59B5; border: 1px solid #7EA9FF;" *ngIf="!itemClassification">
+    <img src="../../assets/24px_Classification.svg" routerLink="/itemClassification"
+      matTooltip="Classification Correction" class="mx-auto " height="27" width="27" alt="" style="cursor: pointer;"
+      *ngIf="!itemClassification">
+  </div>
+
+  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #FFFFFF; border: 1px solid #fff;" *ngIf="itemClassification">
+    <img src="../../assets/24px_Classification_Current.svg" routerLink="/itemClassification" class="mx-auto  "
+      matTooltip="Classification Correction" height="27" width="27" alt="" style="cursor: pointer;">
+  </div>
+
+  <div class="mx-auto" style="height: 2vw; border: 2px solid #70A0FF; width: 0px;"></div>
+
+  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #2D59B5; border: 1px solid #7EA9FF;" *ngIf="!finalList">
+    <img src="../../assets/24px_Consolidated_list.svg" routerLink="/finalList" matTooltip="Final Consolidated List"
+      class="mx-auto" height="27" width="27" alt="" style="cursor: pointer;" *ngIf="!finalList">
+  </div>
+
+  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #FFFFFF; border: 1px solid #fff;" *ngIf="finalList">
+    <img src="../../assets/24px_Consolidated_list_Current.svg" routerLink="/finalList" class="mx-auto  "
+      matTooltip="Final Consolidated List" height="27" width="27" alt="" style="cursor: pointer;">
+  </div>
+
+  <div class="mx-auto" style="height: 2vw; border: 2px solid #70A0FF; width: 0px;"></div>
+
+  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #2D59B5; border: 1px solid #7EA9FF;" *ngIf="!consolidate">
+    <img src="../../assets/24px_Hierarchy.svg" routerLink="/consolidate"
+      matTooltip="LLM Assisted Hierarchy consolidation" class="mx-auto" height="27" width="27" alt=""
+      style="cursor: pointer;" *ngIf="!consolidate">
+  </div>
+
+  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #FFFFFF; border: 1px solid #fff;" *ngIf="consolidate">
+    <img src="../../assets/24px_Hierarchy_Current.svg" routerLink="/consolidate"
+      matTooltip="LLM Assisted Hierarchy consolidation" class="mx-auto  " height="27" width="27" alt=""
+      style="cursor: pointer;">
+  </div>
 </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <img src="../../assets/Dashboard_34px.svg" routerLink="/" matTooltip="File Upload" class="mx-auto mt-3" height="36"
+    width="36" alt="" style="cursor: pointer;" *ngIf="!dashboard">
+
+    <div class="card rounded-circle mt-3 p-2 mx-1" style="background-color: #efa720;" *ngIf="dashboard">
+      <img src="../../assets/Dashboard_34px.svg" routerLink="/" matTooltip="File Upload" class="mx-auto " height="36"
+        width="36" alt="" style="cursor: pointer;">
+    </div>
+  
+    <div class="mx-auto" style="height: 2vw; border: 1px solid #ccc; width: 0px;"></div>
+  
+    <img src="../../assets/population.svg" routerLink="/standardizeChart" matTooltip="Standardization"
+      class="mx-auto mt-0 " height="36" width="36" alt="" style="cursor: pointer;" *ngIf="!standardizeChart">
+  
+    <div class="card rounded-0 mt-0 py-1" style="background-color: #efa720;" *ngIf="standardizeChart">
+      <img src="../../assets/population.svg" routerLink="/standardizeChart" matTooltip="Standardization" class="mx-auto  "
+        height="36" width="36" alt="" style="cursor: pointer;">
+    </div>
+  
+    <img src="../../assets/care_coordination_34px.svg" routerLink="/duplicitItemsB1"
+      matTooltip="Duplicates Within Banner - Group 1 and Group 2" class="mx-auto mt-4 " height="36" width="36" alt=""
+      style="cursor: pointer;" *ngIf="!duplicitItemsB1">
+  
+    <div class="card rounded-0 mt-4 py-1" style="background-color: #efa720;" *ngIf="duplicitItemsB1">
+      <img src="../../assets/care_coordination_34px.svg" routerLink="/duplicitItemsB1"
+        matTooltip="Duplicates Within Banner - Group 1 and Group 2" class="mx-auto  " height="36" width="36" alt=""
+        style="cursor: pointer;">
+    </div>
+  
+    <img src="../../assets/care_coordination_34px.svg" routerLink="/duplicitAcross" matTooltip="Duplicates Across Banner"
+      class="mx-auto mt-4 " height="36" width="36" alt="" style="cursor: pointer;" *ngIf="!duplicitAcross">
+  
+    <div class="card rounded-0 mt-4 py-1" style="background-color: #efa720;" *ngIf="duplicitAcross">
+      <img src="../../assets/care_coordination_34px.svg" routerLink="/duplicitAcross" class="mx-auto   "
+        matTooltip="Duplicates Across Banner" height="36" width="36" alt="" style="cursor: pointer;">
+    </div>
+  
+    <img src="../../assets/care_coordination_34px.svg" routerLink="/itemClassification"
+      matTooltip="Classification Correction" class="mx-auto mt-4 " height="36" width="36" alt="" style="cursor: pointer;"
+      *ngIf="!itemClassification">
+  
+    <div class="card rounded-0 mt-4 py-1" style="background-color: #efa720;" *ngIf="itemClassification">
+      <img src="../../assets/care_coordination_34px.svg" routerLink="/itemClassification" class="mx-auto  "
+        matTooltip="Classification Correction" height="36" width="36" alt="" style="cursor: pointer;">
+    </div>
+  
+    <img src="../../assets/care_coordination_34px.svg" routerLink="/finalList" matTooltip="Final Consolidated List"
+      class="mx-auto mt-4 " height="36" width="36" alt="" style="cursor: pointer;" *ngIf="!finalList">
+  
+    <div class="card rounded-0 mt-4 py-1" style="background-color: #efa720;" *ngIf="finalList">
+      <img src="../../assets/care_coordination_34px.svg" routerLink="/finalList" class="mx-auto  "
+        matTooltip="Final Consolidated List" height="36" width="36" alt="" style="cursor: pointer;">
+    </div>
+  
+    <img src="../../assets/care_coordination_34px.svg" routerLink="/consolidate"
+      matTooltip="LLM Assisted Hierarchy consolidation" class="mx-auto mt-4 " height="36" width="36" alt=""
+      style="cursor: pointer;" *ngIf="!consolidate">
+  
+    <div class="card rounded-0 mt-4 py-1" style="background-color: #efa720;" *ngIf="consolidate">
+      <img src="../../assets/care_coordination_34px.svg" routerLink="/consolidate"
+        matTooltip="LLM Assisted Hierarchy consolidation" class="mx-auto  " height="36" width="36" alt=""
+        style="cursor: pointer;">
+    </div> -->
