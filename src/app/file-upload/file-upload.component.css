@@ -5,3 +5,6 @@
   color: white; /* Set the text color */
   background-color: #ff4081; /* Set the background color */
 }
+.card-border{
+  border: 2px dashed #E2E5F2;
+}

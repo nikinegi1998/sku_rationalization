@@ -1,6 +1,6 @@
 <div class="m-3">
   <div class="d-flex flex-row justify-content-between">
-    <h3 class="" style="font-weight: 595">Item Classification</h3>
+    <h4 class="" style="font-weight: 595">Item Classification</h4>
   </div>
 
   <div class="mt-2">
@@ -18,15 +18,12 @@
             </th>
           </tr>
         </thead>
-        <tbody
-          style="font-size: 1.9vh !important"
-          *ngFor="
+        <tbody style="font-size: 1.9vh !important" *ngFor="
             let data of itemClassification
               | paginate
                 : { itemsPerPage: 7, currentPage: paginator.pageIndex + 1 };
             index as i
-          "
-        >
+          ">
           <tr>
             <td>{{ data.item_name }}</td>
             <td style="color: rgb(224, 86, 86); font-weight: 590;">{{ data.item_category }}</td>
@@ -35,24 +32,13 @@
           </tr>
         </tbody>
       </table>
-      <mat-paginator
-        class="mt-0 mb-1"
-        #paginator
-        showFirstLastButtons
-        [length]="dataSource?.data.length"
-        [pageSize]="7"
-        [pageIndex]="0"
-      >
+      <mat-paginator class="mt-0 mb-1" #paginator showFirstLastButtons [length]="dataSource?.data.length" [pageSize]="7"
+        [pageIndex]="0">
       </mat-paginator>
     </div>
 
     <div class="d-flex justify-content-end m-3 mt-5 fixed-bottom mb-auto">
-      <button
-        mat-raised-button
-        color="primary"
-        class="mb-5"
-        routerLink="/finalList"
-      >
+      <button mat-raised-button color="primary" class="mb-5" routerLink="/finalList" style="background-color: #3F7EFF;">
         Continue
       </button>
     </div>

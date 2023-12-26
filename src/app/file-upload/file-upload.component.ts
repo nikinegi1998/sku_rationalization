@@ -1,8 +1,6 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from '../_Services/api.service';
-
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-
 import { MatModal1Component } from '../mat-modal1/mat-modal1.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -12,10 +10,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './file-upload.component.html',
   styleUrls: ['./file-upload.component.css'],
 })
+
 export class FileUploadComponent implements OnInit {
   @ViewChild("inputFileId1") inputFile1: ElementRef
   @ViewChild("inputFileId2") inputFile2: ElementRef
-
   @ViewChild("snackBar1") snackBar1: ElementRef
 
   success1: boolean = false;
@@ -24,7 +22,7 @@ export class FileUploadComponent implements OnInit {
   filename1 = ''
   filename2 = ''
 
-  constructor(private apiService: ApiService, private dialog: MatDialog, private _snackBar: MatSnackBar) {
+  constructor(private apiService: ApiService, private dialog: MatDialog, private _snackBar: MatSnackBar, private cdr: ChangeDetectorRef) {
   }
 
   ngOnInit(): void {
@@ -49,12 +47,9 @@ export class FileUploadComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.width = '40vw';
     dialogConfig.panelClass = 'no-backdrop-dialog';
-    
+
     this.dialog.open(MatModal1Component, dialogConfig);
   }
-
-
-
 
   onClickIcon1() {
     this.inputFile1?.nativeElement.click();
@@ -67,9 +62,7 @@ export class FileUploadComponent implements OnInit {
 
     const formData = new FormData();
     const fileField = this.inputFile1.nativeElement
-
     console.log("TEST", fileField.files[0].name);
-
 
     formData.append("filename", fileField.files[0]);
 
@@ -79,7 +72,7 @@ export class FileUploadComponent implements OnInit {
         this.success1 = true;
         this.filename1 = fileField.files[0].name
         localStorage.setItem('uploadfilename1', this.filename1)
-        this.openSnackBar(`${fileField.files[0].name} Uploaded Successfully`, 'x')
+        // this.openSnackBar(`${fileField.files[0].name} Uploaded Successfully`, 'x')
       },
       error: (error: any) => {
         console.log(error);
@@ -89,11 +82,10 @@ export class FileUploadComponent implements OnInit {
   }
 
   handleEvent2(event: any) {
-
+    console.log("Testing Nikki code hehhehehe")
     const formData = new FormData();
     const fileField = this.inputFile2.nativeElement
-
-
+    console.log("TEST2", fileField.files[0].name);
 
     formData.append("filename", fileField.files[0]);
 
@@ -104,13 +96,23 @@ export class FileUploadComponent implements OnInit {
         this.filename2 = fileField.files[0].name
         localStorage.setItem('uploadfilename2', this.filename2)
 
-        this.openSnackBar(`${fileField.files[0].name} Uploaded Successfully`, 'x')
+        // this.openSnackBar(`${fileField.files[0].name} Uploaded Successfully`, 'x')
 
       }
     })
   }
 
+  deleteFile1() {
+    this.success1 = false;
+    this.filename1 = ''
+    this.inputFile1.nativeElement.value = null;
+  }
 
-
+  deleteFile2() {
+    this.success2 = false
+    this.filename2 = ''
+    this.inputFile2.nativeElement.value = null
+    
+  }
 
 }

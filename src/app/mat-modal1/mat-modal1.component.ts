@@ -14,7 +14,7 @@ export class MatModal1Component {
 
   openDrawer2(): void {
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.width = '80%';
+    dialogConfig.width = '100%';
     dialogConfig.panelClass = 'no-backdrop-dialog';
 
     this.dialog.open(MatDialog2Component, dialogConfig);

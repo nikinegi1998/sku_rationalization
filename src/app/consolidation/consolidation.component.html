@@ -3,22 +3,11 @@
     <h3 class="" style="font-weight: 595">Consolidation</h3>
   </div> -->
 
-  <h5
-    class="my-auto mt-5 d-flex"
-    *ngIf="consolidateBtnFlag"
-    style="font-size: 1.3em; color: #3f7eff"
-  >
+  <h5 class="my-auto mt-5 d-flex" *ngIf="consolidateBtnFlag" style="font-size: 1.3em; color: #3f7eff">
     Recommended Consolidation Number is
 
-    <input
-      type="number"
-      class="form-control ms-2"
-      style="width: 18%"
-      name=""
-      id=""
-      maxlength="5"
-      [(ngModel)]="inputVal"
-    />
+    <input type="number" class="form-control ms-2" style="width: 18%" name="" id="" maxlength="5"
+      [(ngModel)]="inputVal" />
   </h5>
 
   <div class="d-flex justify-content-between mt-4 mb-5">
@@ -30,62 +19,31 @@
         <!-- <h5 *ngFor="let data of selectedClasses">{{ data }}</h5> -->
       </div>
       <div class="d-flex justify-content-end my-3" *ngIf="consolidateBtnFlag">
-        <button
-          (click)="consolidateWithRecommendedVal()"
-          mat-raised-button
-          color="primary"
-        >
+        <button (click)="consolidateWithRecommendedVal()" mat-raised-button color="primary"
+          style="background-color: #3F7EFF;">
           Consolidate
         </button>
       </div>
-      <div
-        class="d-flex justify-content-between my-3"
-        *ngIf="!consolidateBtnFlag"
-      >
-        <button
-          mat-raised-button
-          color="primary"
-          (click)="moreGrouping('Less')"
-          class="me-2"
-        >
+      <div class="d-flex justify-content-between my-3" *ngIf="!consolidateBtnFlag">
+        <button mat-raised-button color="primary" (click)="moreGrouping('Less')" class="me-2">
           Consolidate With Less Grouping
         </button>
-        <button
-          mat-raised-button
-          color="primary"
-          (click)="moreGrouping('More')"
-        >
+        <button mat-raised-button color="primary" (click)="moreGrouping('More')">
           Consolidate With More Grouping
         </button>
       </div>
     </div>
     <div class="w-50" *ngIf="!consolidateBtnFlag">
       <div class="card mt-2 p-3" style="overflow-y: scroll; height: 60vh">
-        <textarea
-          name=""
-          disabled
-          id=""
-          cols="30"
-          rows="30"
-          *ngFor="
+        <textarea name="" disabled id="" cols="30" rows="30" *ngFor="
             let data of recommendations
               | paginate
                 : { itemsPerPage: 1, currentPage: paginator.pageIndex + 1 };
             index as i
-          "
-          class="border-0"
-          style="background-color: #fff"
-          >{{ data }}
-      </textarea
-        >
-        <mat-paginator
-          class="mt-0 mb-1"
-          #paginator
-          showFirstLastButtons
-          [length]="dataSource?.data.length"
-          [pageSize]="1"
-          [pageIndex]="0"
-        >
+          " class="border-0" style="background-color: #fff">{{ data }}
+      </textarea>
+        <mat-paginator class="mt-0 mb-1" #paginator showFirstLastButtons [length]="dataSource?.data.length"
+          [pageSize]="1" [pageIndex]="0">
         </mat-paginator>
       </div>
     </div>

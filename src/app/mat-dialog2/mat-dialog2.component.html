@@ -10,7 +10,7 @@
     </span>
   </div>
 
-  <small class="ms-3 fw-normal" style="color:#969EA3;">Select The Column To Make Sku List Standardize</small>
+  <small class="ms-3 fw-normal" style="color:#969EA3;">Select The Column To Make SKU List Standardize</small>
 
   <mat-tab-group animationDuration="0ms" mat-stretch-tabs="false" mat-align-tabs="start" disableRipple class="m-3"
     [(selectedIndex)]="indexNumber">
@@ -44,15 +44,16 @@
         </mat-table>
 
 
-        <mat-paginator #paginator1 [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons class="text-end"
-          [length]="dataSource1?.data.length" [pageSize]="5" [pageIndex]="0">
+        <!-- [pageSizeOptions]="[5, 10, 15]" -->
+        <mat-paginator #paginator1 showFirstLastButtons class="text-end" [length]="dataSource1?.data.length"
+          [pageSize]="5" [pageIndex]="0">
         </mat-paginator>
 
       </div>
 
       <div class="d-flex justify-content-end mt-2">
-        <button mat-raised-button color="primary" class="text-end me-4"
-          (click)="changeMatTabIndexNo()">Continue</button>
+        <button mat-raised-button color="primary" class="text-end me-4 py-1 px-3" (click)="changeMatTabIndexNo()"
+          style="background-color: #3F7EFF;">Continue</button>
       </div>
 
     </mat-tab>
@@ -87,14 +88,15 @@
 
         </mat-table>
 
-        <mat-paginator #paginator2 [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons
-          [length]="dataSource2?.data.length" [pageSize]="5" [pageIndex]="0">
+        <!-- [pageSizeOptions]="[5, 10, 15]" -->
+        <mat-paginator #paginator2 showFirstLastButtons [length]="dataSource2?.data.length" [pageSize]="5"
+          [pageIndex]="0">
         </mat-paginator>
       </div>
 
       <div class="d-flex justify-content-end mt-2">
-        <button mat-raised-button color="primary" class="text-end me-4" mat-dialog-close
-          (click)="sendColumn()">Continue</button>
+        <button mat-raised-button color="primary" class="text-end me-4 px-3 py-1" style="background-color: #3F7EFF;"
+          mat-dialog-close (click)="sendColumn()">Continue</button>
       </div>
 
     </mat-tab>

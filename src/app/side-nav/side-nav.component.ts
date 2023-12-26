@@ -65,11 +65,22 @@ export class SideNavComponent implements OnInit {
           this.consolidate = false;
 
         }
-        if (this.currentRoute === "/duplicitItemsB1" || this.currentRoute === "/duplicitItemsB2") {
+        if (this.currentRoute === "/duplicitItemsB1") {
           this.duplicitItemsB1 = true;
           this.standardizeChart = false;
           this.dashboard = false;
           this.duplicitItemsB2 = false;
+          this.duplicitAcross = false;
+          this.itemClassification = false;
+          this.finalList = false;
+          this.consolidate = false;
+
+        }
+        if (this.currentRoute === "/duplicitItemsB2") {
+          this.duplicitItemsB1 = false;
+          this.standardizeChart = false;
+          this.dashboard = false;
+          this.duplicitItemsB2 = true;
           this.duplicitAcross = false;
           this.itemClassification = false;
           this.finalList = false;
@@ -85,8 +96,6 @@ export class SideNavComponent implements OnInit {
           this.itemClassification = false;
           this.finalList = false;
           this.consolidate = false;
-
-
         }
         if (this.currentRoute === "/itemClassification") {
           this.itemClassification = true;
@@ -139,15 +148,17 @@ export class SideNavComponent implements OnInit {
     if (event.selectedIndex == 3) {
       this.router.navigateByUrl("/duplicitItemsB2");
     }
-    if (event.selectedIndex == 4) {
+    if (event.selectedIndex == 4)
       this.router.navigateByUrl("/duplicitAcross");
-    }
-    if (event.selectedIndex == 5) {
+
+    if (event.selectedIndex == 5)
       this.router.navigateByUrl("/itemClassification");
-    }
-    if (event.selectedIndex == 6) {
+
+    if (event.selectedIndex == 6)
       this.router.navigateByUrl("/finalList");
-    }
+
+    if (event.selectedIndex == 7)
+      this.router.navigateByUrl("/consolidate")
   }
 
 }

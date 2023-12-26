@@ -1,44 +1,94 @@
-<!-- File Upload
-Standardization
-Duplicates Within Banner - Group 1 and Group 2
-Duplicates Across Banner
-Classification Correction
-Final Consolidated List
-LLM Assisted Hierarchy consolidation -->
+<div class="card rounded-3 m-2 border-0 " style="min-height: 88%;background-color: #3F7EFF;">
 
-<div class="card rounded-0" style="min-height: 100%;background-color: #3F7EFF;">
+  
+  <h5 class="mt-2 ms-2" style="color: #fff;">Steps</h5>
+  <hr class="m-0 blue-txt">
 
-  <div class="card rounded-circle mt-5 p-2 mx-1" style="background-color: #2D59B5; border: 1px solid #7EA9FF;" *ngIf="!dashboard">
+
+  <mat-stepper class="bg-transparent mt-1 " (selectionChange)="testClick($event)" orientation="vertical"
+    [linear]="false" #stepper>
+    <!-- Define the edit icon, by default is 'create' -->
+    <ng-template matStepperIcon="edit">
+      <mat-icon>number</mat-icon>
+    </ng-template>
+
+    <!-- Define the number of the step -->
+    <ng-template matStepperIcon="number" let-index="index">
+      {{index+1}}
+    </ng-template>
+
+    <mat-step [completed]="dashboard" routerLink="/">
+      <ng-template matStepLabel class="blue-txt small_txt">File Upload</ng-template>
+    </mat-step>
+
+    <mat-step [completed]="standardizeChart" routerLink="/standardizeChart">
+      <ng-template matStepLabel class="blue-txt small_txt">Standardization </ng-template>
+
+    </mat-step>
+    <mat-step [completed]="duplicitItemsB1" routerLink="/duplicitItemsB1">
+      <ng-template matStepLabel class="blue-txt small_txt"> Duplicates Within Banner 1 </ng-template>
+    </mat-step>
+
+    <mat-step [completed]="duplicitItemsB2" routerLink="/duplicitItemsB2">
+      <ng-template matStepLabel class="blue-txt small_txt"> Duplicates Within Banner 2</ng-template>
+    </mat-step>
+
+    <mat-step [completed]="duplicitAcross" routerLink="/duplicitAcross">
+      <ng-template matStepLabel class="blue-txt small_txt">Duplicates Across Banner</ng-template>
+    </mat-step>
+
+    <mat-step [completed]="itemClassification" routerLink="/itemClassification">
+      <ng-template matStepLabel class="blue-txt small_txt"> Classification Correction</ng-template>
+    </mat-step>
+
+    <mat-step [completed]="finalList" routerLink="/finalList">
+      <ng-template matStepLabel class="blue-txt small_txt"> Final Consolidated List</ng-template>
+    </mat-step>
+
+    <mat-step [completed]="consolidate" routerLink="/consolidate">
+      <ng-template matStepLabel class="blue-txt small_txt"> LLM Assisted Hierarchy consolidation</ng-template>
+    </mat-step>
+  </mat-stepper>
+
+
+
+  <!-- <div class="card rounded-circle mt-2 p-2 mx-1" style="background-color: #2D59B5; border: 1px solid #7EA9FF;"
+    *ngIf="!dashboard">
     <img src="../../assets/24px_Upload.svg" routerLink="/" matTooltip="File Upload" class="mx-auto" height="27"
       width="27" alt="" style="cursor: pointer;" *ngIf="!dashboard">
   </div>
 
-  <div class="card rounded-circle mt-5 p-2 mx-1" style="background-color: #FFFFFF; border: 1px solid #fff;" *ngIf="dashboard">
+  <div class="card rounded-circle mt-2 p-2 mx-1" style="background-color: #FFFFFF; border: 1px solid #fff;"
+    *ngIf="dashboard">
     <img src="../../assets/24px_Upload_Current.svg" routerLink="/" matTooltip="File Upload" class="mx-auto " height="27"
       width="27" alt="" style="cursor: pointer;">
   </div>
 
   <div class="mx-auto" style="height: 2vw; border: 2px solid #70A0FF; width: 0px;"></div>
 
-  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #2D59B5; border: 1px solid #7EA9FF;" *ngIf="!standardizeChart">
+  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #2D59B5; border: 1px solid #7EA9FF;"
+    *ngIf="!standardizeChart">
     <img src="../../assets/24px_Standard.svg" routerLink="/standardizeChart" matTooltip="Standardization"
       class="mx-auto" height="27" width="27" alt="" style="cursor: pointer;" *ngIf="!standardizeChart">
   </div>
 
-  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #FFFFFF; border: 1px solid #fff;" *ngIf="standardizeChart">
+  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #FFFFFF; border: 1px solid #fff;"
+    *ngIf="standardizeChart">
     <img src="../../assets/24px_Standard_Current.svg" routerLink="/standardizeChart" matTooltip="Standardization"
       class="mx-auto  " height="27" width="27" alt="" style="cursor: pointer;">
   </div>
 
   <div class="mx-auto" style="height: 2vw; border: 2px solid #70A0FF; width: 0px;"></div>
 
-  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #2D59B5; border: 1px solid #7EA9FF;" *ngIf="!duplicitItemsB1">
+  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #2D59B5; border: 1px solid #7EA9FF;"
+    *ngIf="!duplicitItemsB1">
     <img src="../../assets/24px_Duplicate_within.svg" routerLink="/duplicitItemsB1"
       matTooltip="Duplicates Within Banner - Group 1 and Group 2" class="mx-auto " height="27" width="27" alt=""
       style="cursor: pointer;" *ngIf="!duplicitItemsB1">
   </div>
 
-  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #FFFFFF; border: 1px solid #fff;" *ngIf="duplicitItemsB1">
+  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #FFFFFF; border: 1px solid #fff;"
+    *ngIf="duplicitItemsB1">
     <img src="../../assets/24px_Duplicate_within_Current.svg" routerLink="/duplicitItemsB1"
       matTooltip="Duplicates Within Banner - Group 1 and Group 2" class="mx-auto  " height="27" width="27" alt=""
       style="cursor: pointer;">
@@ -46,12 +96,14 @@ LLM Assisted Hierarchy consolidation -->
 
   <div class="mx-auto" style="height: 2vw; border: 2px solid #70A0FF; width: 0px;"></div>
 
-  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #2D59B5; border: 1px solid #7EA9FF;" *ngIf="!duplicitAcross">
+  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #2D59B5; border: 1px solid #7EA9FF;"
+    *ngIf="!duplicitAcross">
     <img src="../../assets/24px_Duplicate_across.svg" routerLink="/duplicitAcross" matTooltip="Duplicates Across Banner"
       class="mx-auto" height="27" width="27" alt="" style="cursor: pointer;" *ngIf="!duplicitAcross">
   </div>
 
-  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #FFFFFF; border: 1px solid #fff;" *ngIf="duplicitAcross">
+  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #FFFFFF; border: 1px solid #fff;"
+    *ngIf="duplicitAcross">
     <img src="../../assets/24px_Duplicate_across_Current.svg" routerLink="/duplicitAcross" class="mx-auto   "
       matTooltip="Duplicates Across Banner" height="27" width="27" alt="" style="cursor: pointer;">
   </div>
@@ -59,42 +111,48 @@ LLM Assisted Hierarchy consolidation -->
 
   <div class="mx-auto" style="height: 2vw; border: 2px solid #70A0FF; width: 0px;"></div>
 
-  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #2D59B5; border: 1px solid #7EA9FF;" *ngIf="!itemClassification">
+  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #2D59B5; border: 1px solid #7EA9FF;"
+    *ngIf="!itemClassification">
     <img src="../../assets/24px_Classification.svg" routerLink="/itemClassification"
       matTooltip="Classification Correction" class="mx-auto " height="27" width="27" alt="" style="cursor: pointer;"
       *ngIf="!itemClassification">
   </div>
 
-  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #FFFFFF; border: 1px solid #fff;" *ngIf="itemClassification">
+  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #FFFFFF; border: 1px solid #fff;"
+    *ngIf="itemClassification">
     <img src="../../assets/24px_Classification_Current.svg" routerLink="/itemClassification" class="mx-auto  "
       matTooltip="Classification Correction" height="27" width="27" alt="" style="cursor: pointer;">
   </div>
 
   <div class="mx-auto" style="height: 2vw; border: 2px solid #70A0FF; width: 0px;"></div>
 
-  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #2D59B5; border: 1px solid #7EA9FF;" *ngIf="!finalList">
+  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #2D59B5; border: 1px solid #7EA9FF;"
+    *ngIf="!finalList">
     <img src="../../assets/24px_Consolidated_list.svg" routerLink="/finalList" matTooltip="Final Consolidated List"
       class="mx-auto" height="27" width="27" alt="" style="cursor: pointer;" *ngIf="!finalList">
   </div>
 
-  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #FFFFFF; border: 1px solid #fff;" *ngIf="finalList">
+  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #FFFFFF; border: 1px solid #fff;"
+    *ngIf="finalList">
     <img src="../../assets/24px_Consolidated_list_Current.svg" routerLink="/finalList" class="mx-auto  "
       matTooltip="Final Consolidated List" height="27" width="27" alt="" style="cursor: pointer;">
   </div>
 
   <div class="mx-auto" style="height: 2vw; border: 2px solid #70A0FF; width: 0px;"></div>
 
-  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #2D59B5; border: 1px solid #7EA9FF;" *ngIf="!consolidate">
+  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #2D59B5; border: 1px solid #7EA9FF;"
+    *ngIf="!consolidate">
     <img src="../../assets/24px_Hierarchy.svg" routerLink="/consolidate"
       matTooltip="LLM Assisted Hierarchy consolidation" class="mx-auto" height="27" width="27" alt=""
       style="cursor: pointer;" *ngIf="!consolidate">
   </div>
 
-  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #FFFFFF; border: 1px solid #fff;" *ngIf="consolidate">
+  <div class="card rounded-circle mt-0 p-2 mx-1" style="background-color: #FFFFFF; border: 1px solid #fff;"
+    *ngIf="consolidate">
     <img src="../../assets/24px_Hierarchy_Current.svg" routerLink="/consolidate"
       matTooltip="LLM Assisted Hierarchy consolidation" class="mx-auto  " height="27" width="27" alt=""
       style="cursor: pointer;">
-  </div>
+  </div> -->
 </div>
 
 

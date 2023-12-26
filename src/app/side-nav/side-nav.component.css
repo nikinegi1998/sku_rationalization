@@ -1,3 +1,45 @@
+.blue-txt {
+  color: #1D316A;
+}
+
 .mat-step-header {
-  display: none;
+  padding: 18px 10px 18px 29px;
+}
+
+.mat-step-label .mat-step-text-label {
+  font-size: 0.9vw !important;
+  color: #1D316A !important;
+}
+
+.mat-step-label-selected .mat-step-text-label {
+  color: #fff !important;
+}
+
+.mat-step-icon {
+  background-color: #A9BFFE !important;
+  color: transparent !important;
+  width: 15px !important;
+  height: 15px !important;
+}
+
+.mat-step-icon-state-number {
+  background-color: #A9BFFE !important;
+}
+
+.mat-step-icon-state-edit {
+  background-color: #fff !important;
+}
+
+
+/* text highlight */
+.mat-step-icon-state-edit+.mat-step-label .mat-step-text-label {
+  color: #fff !important;
+}
+
+/* .mat-step-header .mat-step-icon-selected {
+  background-color: #fff !important;
+} */
+
+.mat-vertical-content {
+  display: none !important;
 }

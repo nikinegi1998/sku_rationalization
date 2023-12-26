@@ -14,24 +14,24 @@
   </div>
 </div>
 <div class="mx-3">
-  <div class="card rounded-0 d-flex flex-row justify-content-between p-3"
-    style="border-color: #42b977; background-color: #ffffff; font-weight: 590">
-    <span class="my-auto" style="font-size: 1.3em; color: #3f7eff">Item Naming Standardization Rule:
+  <div class="card rounded-2 d-flex flex-row justify-content-between p-3"
+    style="border-color: #C7E5D4; background-color: #ffffff; font-weight: 590">
+    <span class="my-auto" style="font-size: 1em; color: #3f7eff">Item Naming Standardization Rule:
     </span>
-    <span *ngFor="let dt of STD_rule" class="mx-2 p-1 my-auto text-center" style="
+    <span *ngFor="let dt of STD_rule" class="mx-1 p-1 my-auto text-center" style="
         border: none;
         outline-color: #42b977;
         outline-style: dashed;
-        outline-offset: 1px;
+        outline-offset: 0.5px;
         color: #42b977;
-        width: 8%;
-        font-size: 1.05vw;
+        width: 9%;
+        font-size: 1vw;
       ">{{ dt }}</span>
 
-    <span class="mx-2 p-1 my-auto text-center" style="color: #42b977">(All Inticap)</span>
+    <span class="mx-1 p-1 my-auto text-center" style="color: #42b977; font-size: 1em;">(All Inticap)</span>
   </div>
 
-  <div class="card rounded-0 border border-0 d-flex flex-row mt-3" style="font-size: 1.8vh !important; color: #7672ed">
+  <div class="card rounded-0 border border-2 d-flex flex-row mt-3" style="font-size: 1.8vh !important; color: #7672ed">
     <th class="text-center" style="background-color: #dcdbfa; width: 3.7%">
       Banner
     </th>
@@ -155,7 +155,8 @@
         </td>
         <td style="cursor: pointer" class="ms-0 ps-0">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_UOM_dict_DT.DT['Liter']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i"  value = {{data1}} [name]="'Liter'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i" value={{data1}} [name]="'Liter'">
             <label class="form-check-labe " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
         </td>
@@ -169,14 +170,15 @@
               <label class="form-check-label" >
                 {{ data1 }}
               </label> -->
-            <!-- <li value="Liter" [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i" class="my-0">
+        <!-- <li value="Liter" [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i" class="my-0">
               {{ data1 }}
             </li> -->
-          <!-- </ul> -->
+        <!-- </ul> -->
         <!-- </td> -->
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_UOM_dict_DT.DT['Mili Liter']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i"  value = {{data1}} [name]="'Mili Liter'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i" value={{data1}} [name]="'Mili Liter'">
             <label class="form-check-labe " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="
@@ -190,7 +192,8 @@
         </td>
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_UOM_dict_DT.DT['Gram']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i"  value = {{data1}} [name]="'Gram'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i" value={{data1}} [name]="'Gram'">
             <label class="form-check-label " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="let data1 of data.subcat_UOM_dict_DT.DT['Gram']; index as i">
@@ -201,7 +204,8 @@
         </td>
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_UOM_dict_DT.DT['Ounce']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i"  value = {{data1}} [name]="'Ounce'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i" value={{data1}} [name]="'Ounce'">
             <label class="form-check-label " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="
@@ -216,7 +220,8 @@
 
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_PackType_dict_DT.DT['Bottle']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i"  value = {{data1}} [name]="'Bottle'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i" value={{data1}} [name]="'Bottle'">
             <label class="form-check-label " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="
@@ -230,7 +235,8 @@
         </td>
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_PackType_dict_DT.DT['Can']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i"  value = {{data1}} [name]="'Can'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i" value={{data1}} [name]="'Can'">
             <label class="form-check-label " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="
@@ -244,7 +250,8 @@
         </td>
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_PackType_dict_DT.DT['Bag']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i"  value = {{data1}} [name]="'Bag'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i" value={{data1}} [name]="'Bag'">
             <label class="form-check-label " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="
@@ -258,7 +265,8 @@
         </td>
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_PackType_dict_DT.DT['Jar']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i"  value = {{data1}} [name]="'Jar'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i" value={{data1}} [name]="'Jar'">
             <label class="form-check-label " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="
@@ -272,7 +280,8 @@
         </td>
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_PackType_dict_DT.DT['Pouch']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i"  value = {{data1}} [name]="'Pouch'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_PackType_dict_Both-DT' + i" value={{data1}} [name]="'Pouch'">
             <label class="form-check-label " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="
@@ -287,7 +296,8 @@
 
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_PackSize_dict_DT.DT['Pack']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i"  value = {{data1}} [name]="'Pack'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i" value={{data1}} [name]="'Pack'">
             <label class="form-check-label " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="
@@ -301,7 +311,8 @@
         </td>
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_PackSize_dict_DT.DT['Carton']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i"  value = {{data1}} [name]="'Carton'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i" value={{data1}} [name]="'Carton'">
             <label class="form-check-label " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="
@@ -315,7 +326,8 @@
         </td>
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_PackSize_dict_DT.DT['FamilySize']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i"  value = {{data1}} [name]="'FamilySize'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i" value={{data1}} [name]="'FamilySize'">
             <label class="form-check-label " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="
@@ -329,7 +341,8 @@
         </td>
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_PackSize_dict_DT.DT['MultiPack']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i"  value = {{data1}} [name]="'MultiPack'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i" value={{data1}} [name]="'MultiPack'">
             <label class="form-check-label " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="
@@ -343,7 +356,8 @@
         </td>
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_PackSize_dict_DT.DT['SingleServe']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i"  value = {{data1}} [name]="'SingleServe'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i" value={{data1}} [name]="'SingleServe'">
             <label class="form-check-label " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="
@@ -357,7 +371,8 @@
         </td>
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_PackSize_dict_DT.DT['VarietyPack']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i"  value = {{data1}} [name]="'VarietyPack'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_PackSize_dict_Both-DT' + i" value={{data1}} [name]="'VarietyPack'">
             <label class="form-check-label " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="
@@ -374,7 +389,8 @@
         <td style="color: #7672ed">FD</td>
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_UOM_dict_FD.Fd['Fluid Once']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i"  value = {{data1}} [name]="'Fluid Once'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i" value={{data1}} [name]="'Fluid Once'">
             <label class="form-check-label " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="
@@ -388,7 +404,8 @@
         </td>
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_UOM_dict_FD.Fd['Liter']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i"  value = {{data1}} [name]="'Liter'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i" value={{data1}} [name]="'Liter'">
             <label class="form-check-label " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="
@@ -402,7 +419,8 @@
         </td>
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_UOM_dict_FD.Fd['Mili Liter']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i"  value = {{data1}} [name]="'Mili Liter'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i" value={{data1}} [name]="'Mili Liter'">
             <label class="form-check-label " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="
@@ -416,7 +434,8 @@
         </td>
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_UOM_dict_FD.Fd['Gram']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i"  value = {{data1}} [name]="'Gram'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i" value={{data1}} [name]="'Gram'">
             <label class="form-check-label " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="let data1 of data.subcat_UOM_dict_FD.Fd['Gram']; index as i">
@@ -427,7 +446,8 @@
         </td>
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_UOM_dict_FD.Fd['Ounce']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i"  value = {{data1}} [name]="'Ounce'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_UOM_dict_Both-DT' + i" value={{data1}} [name]="'Ounce'">
             <label class="form-check-label " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="
@@ -441,7 +461,8 @@
         </td>
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_PackType_dict_FD.Fd['Bottle']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i"  value = {{data1}} [name]="'Bottle'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i" value={{data1}} [name]="'Bottle'">
             <label class="form-check-label " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="
@@ -455,7 +476,8 @@
         </td>
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_PackType_dict_FD.Fd['Can']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i"  value = {{data1}} [name]="'Can'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i" value={{data1}} [name]="'Can'">
             <label class="form-check-label " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="
@@ -469,7 +491,8 @@
         </td>
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_PackType_dict_FD.Fd['Bag']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i"  value = {{data1}} [name]="'Bag'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i" value={{data1}} [name]="'Bag'">
             <label class="form-check-label " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="
@@ -483,7 +506,8 @@
         </td>
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_PackType_dict_FD.Fd['Jar']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i"  value = {{data1}} [name]="'Jar'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i" value={{data1}} [name]="'Jar'">
             <label class="form-check-label " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="
@@ -497,7 +521,8 @@
         </td>
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_PackType_dict_FD.Fd['Pouch']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i"  value = {{data1}} [name]="'Pouch'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_PackType_dict_Both-Fd' + i" value={{data1}} [name]="'Pouch'">
             <label class="form-check-label " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="
@@ -512,7 +537,8 @@
 
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_PackSize_dict_FD.Fd['Pack']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i"  value = {{data1}} [name]="'Pack'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i" value={{data1}} [name]="'Pack'">
             <label class="form-check-label " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="
@@ -526,7 +552,8 @@
         </td>
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_PackSize_dict_FD.Fd['Carton']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i"  value = {{data1}} [name]="'Carton'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i" value={{data1}} [name]="'Carton'">
             <label class="form-check-label " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="
@@ -540,7 +567,8 @@
         </td>
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_PackSize_dict_FD.Fd['FamilySize']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i"  value = {{data1}} [name]="'FamilySize'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i" value={{data1}} [name]="'FamilySize'">
             <label class="form-check-label " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="
@@ -554,7 +582,8 @@
         </td>
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_PackSize_dict_FD.Fd['MultiPack']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i"  value = {{data1}} [name]="'MultiPack'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i" value={{data1}} [name]="'MultiPack'">
             <label class="form-check-label " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="
@@ -568,7 +597,8 @@
         </td>
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_PackSize_dict_FD.Fd['SingleServe']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i"  value = {{data1}} [name]="'SingleServe'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i" value={{data1}} [name]="'SingleServe'">
             <label class="form-check-label " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="
@@ -582,7 +612,8 @@
         </td>
         <td style="cursor: pointer">
           <div class="p-1 p-0 ms-0" *ngFor="let data1 of data.subcat_PackSize_dict_FD.Fd['VarietyPack']; index as i">
-            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;"  type="radio"  [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i"  value = {{data1}} [name]="'VarietyPack'" >
+            <input class="form-check-input ms-0 me-1 ps-0" style="margin-left: -0.6em!important;" type="radio"
+              [attr.id]="data1 + '-subcat_PackSize_dict_Both-Fd' + i" value={{data1}} [name]="'VarietyPack'">
             <label class="form-check-label " [attr.for]="'radio-' + i">{{ data1 }}</label>
           </div>
           <!-- <ul class="m-0 p-0 ps-1" *ngFor="
@@ -599,7 +630,7 @@
   </table>
 
   <div class="d-flex justify-content-end m-3 mt-5 fixed-bottom mb-auto">
-    <button mat-raised-button color="primary" class="mb-5" (click)="changeSTDrule()">
+    <button mat-raised-button color="primary" class="mb-5" style="background-color: #3F7EFF;" (click)="changeSTDrule()">
       Continue
     </button>
   </div>

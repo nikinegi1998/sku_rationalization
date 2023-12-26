@@ -1,11 +1,11 @@
 <div class="m-3">
   <div class="d-flex flex-row justify-content-between">
-    <h3 class="" style="font-weight: 595" *ngIf="clickedGrid">
+    <h4 class="" style="font-weight: 595" *ngIf="clickedGrid">
       Items With Duplicity (Within Banner 1)
-    </h3>
-    <h3 class="" style="font-weight: 595" *ngIf="clickedList">
+    </h4>
+    <h4 class="" style="font-weight: 595" *ngIf="clickedList">
       Duplicity Within (Brand 1)
-    </h3>
+    </h4>
     <div>
       <i class="bi bi-list-ul p-2" *ngIf="!clickedList" style="cursor: pointer; color: black; background-color: #ffffff"
         (click)="onClickList()">
@@ -86,7 +86,7 @@
 
         <tbody style="font-size: 1.9vh!important;"
           *ngFor="let data2 of dataSource.data | paginate: { itemsPerPage: 8, currentPage: paginator.pageIndex + 1 };index as i">
-          <tr *ngIf="data2['Survived']" >
+          <tr *ngIf="data2['Survived']">
             <td>{{ data2['Class Description']?data2['Class Description']:"" }}</td>
             <td>{{ data2['SKU1']?data2['SKU1']:"" }}</td>
             <td>{{ (data2['Similarity']?isFloat(data2['Similarity']):"" ) }}</td>
@@ -137,12 +137,14 @@
     </div> -->
   </div>
   <div class="d-flex justify-content-end mt-2 mb-5 sticky-bottom mb-auto" *ngIf="clickedList">
-    <button mat-raised-button color="primary" class="mb-5 mt-1" routerLink="/duplicitItemsB2">
+    <button mat-raised-button color="primary" class="mb-5 mt-1" style="background-color: #3F7EFF;"
+      routerLink="/duplicitItemsB2">
       Continue
     </button>
   </div>
   <div class="d-flex justify-content-end m-3 mt-2 mb-5 fixed-bottom mb-auto" *ngIf="clickedGrid">
-    <button mat-raised-button color="primary" class="mb-5 mt-2" routerLink="/duplicitItemsB2">
+    <button mat-raised-button color="primary" class="mb-5 mt-2" style="background-color: #3F7EFF;"
+      routerLink="/duplicitItemsB2">
       Continue
     </button>
   </div>

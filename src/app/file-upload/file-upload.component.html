@@ -1,42 +1,105 @@
-<h3 class="ms-3 mt-3" style="font-weight: 595;">Upload & Check Sku</h3>
-
-<!-- <mat-form-field>
-  <mat-label>Message</mat-label>
-  <input matInput value="Disco party!" #message>
-</mat-form-field>
-
-<mat-form-field>
-  <mat-label>Action</mat-label>
-  <input matInput value="Dance" #action>
-</mat-form-field> -->
-
-<!-- <button mat-stroked-button style="display: none;" #snackBar1 >Show snack-bar</button> -->
-
+<h4 class="ms-3 mt-3 mb-0 fw-semibold">Upload File</h4>
+<p class="ms-3 mb-1" style="color: #5E5E72;">Upload the list of SKU to make them standardize.</p>
 
 <div class="m-3 d-flex flex-row justify-content-between">
 
-  <div class="card p-5"  style="width: 45vw;cursor: pointer;" (click)="onClickIcon1()">
+  <div class="card p-5 card-border" style="width: 39vw;cursor: pointer;" (click)="onClickIcon1()">
 
     <div class="card mx-auto p-4 rounded-circle mb-4" style="background-color: #EEEFF1;border-color: #E2E5F2;">
       <img src="../../assets/File_42px.svg" height="50" width="50" class="" alt="">
 
     </div>
 
-    <input type="file" #inputFileId1  (change)="handleEvent1($event)" style="width: auto;opacity: 0;display: none; ">
-    <h5 class="m-auto" style="color: #969EA3;">Upload Sku file  To Standardize</h5>
+    <input type="file" #inputFileId1 (change)="handleEvent1($event)" style="width: auto;opacity: 0;display: none; ">
+    <h5 class="m-auto" style="color: #969EA3;">Click Here To Upload File</h5>
 
   </div>
-  <div class="card p-5"  style="width: 45vw;cursor: pointer;" (click)="onClickIcon2()">
+  <div class="card p-5 card-border" style="width: 39vw;cursor: pointer;" (click)="onClickIcon2()">
 
     <div class="card mx-auto p-4 rounded-circle mb-4" style="background-color: #EEEFF1;border-color: #E2E5F2;">
       <img src="../../assets/File_42px.svg" height="50" width="50" class="" alt="">
 
     </div>
     <input type="file" #inputFileId2 (change)="handleEvent2($event)" style="width: auto;opacity: 0;display: none; ">
-    <h5 class="m-auto" style="color: #969EA3;">Upload Sku file  To Standardize</h5>
+    <h5 class="m-auto" style="color: #969EA3;">Click Here To Upload File</h5>
   </div>
 </div>
 
-<div class="d-flex justify-content-end m-3 mt-5 fixed-bottom mb-auto " > <button (click)="openDrawer()" mat-raised-button color="primary" [disabled]="(success1 && success2)?false:true" class="mb-5" >Continue</button></div>
-<!-- <div class="d-flex justify-content-end m-3 mt-5 " *ngIf="success1 && success2"> <button (click)="openDrawer()" mat-raised-button color="primary"  class="text-end">Continue</button></div> -->
+<div class="m-3 d-flex flex-row justify-content-between">
 
+  <div>
+    <h6 class="mt-2 fw-semibold">Company 1</h6>
+    <div class="card py-3 px-4 " style="width: 39vw;">
+      <div class="d-flex justify-content-between mb-2">
+
+        <input type="text" class="form-control w-50" placeholder="Enter Company" name="" id="">
+
+        <div *ngIf="!filename1" class="alert alert-danger p-0 px-2"
+          style="color: #F0514F; border-color: #FAC9C8; background-color: #FEEEED; font-size: 13px;" role="alert">
+          Not Uploaded
+        </div>
+        <div *ngIf="filename1" class="alert alert-success p-0 px-2"
+          style="color: #42B977; border-color: #A8DFC0; background-color: #ECF8F1; font-size: 13px;" role="alert">
+          Upload Success
+        </div>
+      </div>
+      <div class="d-flex justify-content-between">
+        <p class="m-0">
+          <span class="fw-semibold text-muted">File: </span>
+          <span class="text-muted" *ngIf="filename1 == ''" else #file1>No File</span>
+          <span #file1>{{filename1}}</span>
+        </p>
+
+        <div *ngIf="filename1" class="p-0">
+          <button (click)="deleteFile1()" class="border-0 pe-0"
+            style="background-color: #fff;font-size: 13px; color: #F0514F;">
+            Delete File
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h6 class="mt-2 fw-semibold">Company 2</h6>
+    <div class="card py-3 px-4" style="width: 39vw;">
+      <div class="d-flex justify-content-between mb-2">
+
+        <input type="text" class="form-control w-50" placeholder="Enter Company" name="" id="">
+
+        <div *ngIf="!filename2" class="alert alert-danger p-0 px-2"
+          style="color: #F0514F; border-color: #FAC9C8; background-color: #FEEEED; font-size: 13px;" role="alert">
+          Not Uploaded
+        </div>
+        <div *ngIf="filename2" class="alert alert-success p-0 px-2"
+          style="color: #42B977; border-color: #A8DFC0; background-color: #ECF8F1; font-size: 13px;" role="alert">
+          Upload Success
+        </div>
+      </div>
+      <div class="d-flex justify-content-between">
+        <p class="m-0">
+          <span class="fw-semibold text-muted">File: </span>
+          <span class="text-muted" *ngIf="filename2 == ''" else #file2>No File</span>
+          <span #file2>{{filename2}}</span>
+        </p>
+
+        <div *ngIf="filename2" class="p-0">
+          <button (click)="deleteFile2()" class="border-0 pe-0"
+            style="background-color: #fff;font-size: 13px; color: #F0514F;">
+            Delete File
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+<div class="d-flex justify-content-end m-3 mt-5 me-4 mb-auto "> <button (click)="openDrawer()" mat-raised-button
+    color="primary" class="mb-5 py-1 px-3" style="background-color: #3F7EFF; color: #fff;"
+    [disabled]="(success1 && success2)?false:true">Continue</button></div>
+
+<!-- <div class="d-flex justify-content-end m-3 mt-5 " *ngIf="success1 && success2"> <button (click)="openDrawer()" mat-raised-button color="primary"  class="text-end">Continue</button></div> -->
